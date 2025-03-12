@@ -1,0 +1,10 @@
+anthropic
+llama-index
+llama-index-readers-google
+llama-index-embeddings-voyageai
+llama-index-llms-anthropic
+python-dotenv
+fastapi
+uvicorn
+google-api-python-client
+docx2txt
