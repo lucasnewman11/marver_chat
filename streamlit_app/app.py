@@ -10,14 +10,14 @@ from anthropic import Anthropic
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Import from old llama_index version (0.9.x)
-from llama_index import VectorStoreIndex, Document, ServiceContext
-from llama_index import set_global_service_context
-from llama_index.vector_stores import PineconeVectorStore
-from llama_index.storage.storage_context import StorageContext
-from llama_index.embeddings.openai import OpenAIEmbedding  # Use OpenAI embeddings instead of Voyage
+# Import from llama_index modular packages
+from llama_index.core import VectorStoreIndex, Document, ServiceContext
+from llama_index.core import set_global_service_context
+from llama_index.vector_stores.pinecone import PineconeVectorStore
+from llama_index.core.storage.storage_context import StorageContext
+from llama_index.embeddings.voyageai import VoyageEmbedding
 from llama_index.llms.anthropic import Anthropic as LlamaIndexAnthropic
-from llama_index.langchain_helpers.text_splitter import SentenceSplitter
+from llama_index.core.node_parser import SentenceSplitter
 from llama_index.readers.google import GoogleDriveReader
 
 # Load environment variables
@@ -48,12 +48,12 @@ mode = st.sidebar.radio("Mode", ["Assistant", "Sales Simulation"])
 st.session_state.mode = mode.lower()
 
 # Function to get secrets
-def get_secret(key):
+def get_secret(key, default=None):
     # Try to get from Streamlit secrets first (for deployment)
     if hasattr(st, "secrets") and key in st.secrets:
         return st.secrets[key]
     # Then try environment variables (for local development)
-    return os.getenv(key)
+    return os.getenv(key, default)
 
 # Initialize Google Drive service
 @st.cache_resource
@@ -95,25 +95,42 @@ def init_pinecone():
     if not api_key or not environment:
         raise ValueError("Pinecone API key or environment not found")
     
-    pinecone.init(api_key=api_key, environment=environment)
-    
-    index_name = get_secret("PINECONE_INDEX_NAME") or "sales-simulator"
-    
-    # Check if index exists, create if it doesn't
-    if index_name not in pinecone.list_indexes():
-        # Use OpenAI dimensions (1536) as default
-        pinecone.create_index(index_name, dimension=1536, metric="cosine")
-        st.sidebar.success(f"Created new Pinecone index: {index_name}")
-    
-    return pinecone.Index(index_name)
+    try:
+        # For newer Pinecone client (v2+)
+        pc = pinecone.Pinecone(api_key=api_key)
+        index_name = get_secret("PINECONE_INDEX_NAME") or "sales-simulator"
+        
+        # Check if index exists, create if it doesn't
+        existing_indexes = [index.name for index in pc.list_indexes()]
+        if index_name not in existing_indexes:
+            # Use VoyageAI dimensions (1024) for voyage-3 model
+            pc.create_index(name=index_name, dimension=1024, metric="cosine")
+            st.sidebar.success(f"Created new Pinecone index: {index_name}")
+        
+        return pc.Index(index_name)
+    except AttributeError:
+        # Fallback for older Pinecone client (v1)
+        pinecone.init(api_key=api_key, environment=environment)
+        
+        index_name = get_secret("PINECONE_INDEX_NAME") or "sales-simulator"
+        
+        # Check if index exists, create if it doesn't
+        if index_name not in pinecone.list_indexes():
+            # Use VoyageAI dimensions (1024) for voyage-3 model
+            pinecone.create_index(index_name, dimension=1024, metric="cosine")
+            st.sidebar.success(f"Created new Pinecone index: {index_name}")
+        
+        return pinecone.Index(index_name)
 
 # Initialize LlamaIndex components
 @st.cache_resource
 def init_llama_index():
     # Set up embedding model
-    embed_model = OpenAIEmbedding(
-        api_key=get_secret("ANTHROPIC_API_KEY"),  # Using Anthropic key for now 
-        embed_batch_size=10
+    voyage_api_key = get_secret("VOYAGE_API_KEY", "pa-Hj2UDd0uOnPfrSlYLyfka-XlM859rV4MWwx8B-5YAOM")
+    embed_model = VoyageEmbedding(
+        voyage_api_key=voyage_api_key,
+        model_name="voyage-3",
+        input_type="search_query"
     )
     
     # Set up LLM
@@ -136,25 +153,31 @@ def init_llama_index():
 # Initialize vector store and index
 @st.cache_resource
 def init_vector_store():
-    pinecone_index = init_pinecone()
-    vector_store = PineconeVectorStore(pinecone_index=pinecone_index)
-    storage_context = StorageContext.from_defaults(vector_store=vector_store)
-    
-    # Create empty index if not existing
     try:
-        index = VectorStoreIndex.from_vector_store(
-            vector_store,
-            service_context=init_llama_index()
-        )
+        pinecone_index = init_pinecone()
+        vector_store = PineconeVectorStore(pinecone_index=pinecone_index)
+        storage_context = StorageContext.from_defaults(vector_store=vector_store)
+        
+        # Create empty index if not existing
+        try:
+            index = VectorStoreIndex.from_vector_store(
+                vector_store,
+                service_context=init_llama_index()
+            )
+        except Exception as e:
+            st.sidebar.warning(f"Creating new index: {e}")
+            index = VectorStoreIndex.from_documents(
+                [],  # Empty index to start
+                storage_context=storage_context,
+                service_context=init_llama_index()
+            )
+        
+        return index, vector_store
     except Exception as e:
-        st.sidebar.warning(f"Creating new index: {e}")
-        index = VectorStoreIndex.from_documents(
-            [],  # Empty index to start
-            storage_context=storage_context,
-            service_context=init_llama_index()
-        )
-    
-    return index, vector_store
+        st.error(f"Error initializing vector store: {str(e)}")
+        import traceback
+        st.error(traceback.format_exc())  # Show full error trace
+        raise
 
 # Initialize Anthropic client
 @st.cache_resource
@@ -283,42 +306,48 @@ def load_documents_from_drive(simulation_folder_id=None, technical_folder_id=Non
 # Index creation functions
 def create_indexes(documents):
     """Create indexes for the documents"""
-    # Split documents by type
-    simulation_docs = [doc for doc in documents if doc.metadata.get("type") == "simulation"]
-    technical_docs = [doc for doc in documents if doc.metadata.get("type") == "technical"]
-    general_docs = [doc for doc in documents if doc.metadata.get("type") == "general"]
-    
-    st.text(f"Processing {len(simulation_docs)} simulation docs, {len(technical_docs)} technical docs, and {len(general_docs)} general docs")
-    
-    # Get the vector store
-    index, vector_store = init_vector_store()
-    storage_context = StorageContext.from_defaults(vector_store=vector_store)
-    
-    # Process simulation documents (minimal chunking)
-    if simulation_docs:
-        st.text("Indexing simulation documents...")
-        simulation_parser = SentenceSplitter(chunk_size=3000, chunk_overlap=100)
-        VectorStoreIndex.from_documents(
-            simulation_docs,
-            storage_context=storage_context,
-            transformations=[simulation_parser],
-            service_context=init_llama_index()
-        )
-    
-    # Process technical and general documents (standard chunking)
-    other_docs = technical_docs + general_docs
-    if other_docs:
-        st.text("Indexing technical and general documents...")
-        standard_parser = SentenceSplitter(chunk_size=512, chunk_overlap=50)
-        VectorStoreIndex.from_documents(
-            other_docs,
-            storage_context=storage_context,
-            transformations=[standard_parser],
-            service_context=init_llama_index()
-        )
-    
-    st.success("Indexing complete!")
-    return index
+    try:
+        # Split documents by type
+        simulation_docs = [doc for doc in documents if doc.metadata.get("type") == "simulation"]
+        technical_docs = [doc for doc in documents if doc.metadata.get("type") == "technical"]
+        general_docs = [doc for doc in documents if doc.metadata.get("type") == "general"]
+        
+        st.text(f"Processing {len(simulation_docs)} simulation docs, {len(technical_docs)} technical docs, and {len(general_docs)} general docs")
+        
+        # Get the vector store
+        index, vector_store = init_vector_store()
+        storage_context = StorageContext.from_defaults(vector_store=vector_store)
+        
+        # Process simulation documents (minimal chunking)
+        if simulation_docs:
+            st.text("Indexing simulation documents...")
+            simulation_parser = SentenceSplitter(chunk_size=3000, chunk_overlap=100)
+            VectorStoreIndex.from_documents(
+                simulation_docs,
+                storage_context=storage_context,
+                transformations=[simulation_parser],
+                service_context=init_llama_index()
+            )
+        
+        # Process technical and general documents (standard chunking)
+        other_docs = technical_docs + general_docs
+        if other_docs:
+            st.text("Indexing technical and general documents...")
+            standard_parser = SentenceSplitter(chunk_size=512, chunk_overlap=50)
+            VectorStoreIndex.from_documents(
+                other_docs,
+                storage_context=storage_context,
+                transformations=[standard_parser],
+                service_context=init_llama_index()
+            )
+        
+        st.success("Indexing complete!")
+        return index
+    except Exception as e:
+        st.error(f"Error creating indexes: {str(e)}")
+        import traceback
+        st.error(traceback.format_exc())  # Show full error trace
+        raise
 
 # Main functionality
 def main():
