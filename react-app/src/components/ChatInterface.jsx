@@ -20,18 +20,15 @@ function ChatInterface({ messages, onSendMessage, isInitialized, mode }) {
   
   return (
     <div className="chat-interface">
-      <div className="chat-header">
-        <h2>{mode === 'simulation' ? 'Sales Simulation' : 'Assistant'} Mode</h2>
-      </div>
-      
       <div className="chat-messages">
         {!isInitialized ? (
           <div className="initialization-message">
-            <p>Please load documents using the sidebar before chatting.</p>
+            <p>Loading transcripts...</p>
+            <div className="loading-spinner"></div>
           </div>
         ) : messages.length === 0 ? (
           <div className="empty-chat">
-            <p>Ask a question about your sales calls or documentation.</p>
+            <p>Ask a question about sales calls or solar panel installations.</p>
             {mode === 'simulation' && (
               <p className="simulation-hint">
                 In simulation mode, the AI will respond as if it were a salesperson on a call.
@@ -51,7 +48,7 @@ function ChatInterface({ messages, onSendMessage, isInitialized, mode }) {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={isInitialized ? "Type your message here..." : "Load documents first..."}
+          placeholder={isInitialized ? "Type your message here..." : "Loading..."}
           disabled={!isInitialized}
         />
         <button 

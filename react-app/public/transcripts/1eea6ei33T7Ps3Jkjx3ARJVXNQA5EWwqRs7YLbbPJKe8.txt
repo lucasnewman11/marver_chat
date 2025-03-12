@@ -1,0 +1,658 @@
+﻿Speaker 1:
+You're looking for something you care about. I just saved this bill.
+Speaker 2:
+Yeah. That looks like it. Oh yeah. Well, so what was that one?
+Speaker 1:
+That's the one I was talking about.
+Speaker 2:
+The $300.01?
+Speaker 1:
+No, that's what, that was back uh during the summer. Yeah this is uh 10, so they got me kind of on a rate thing now that uh. Well, Because the week before I paid $107. I said, whoa, what's going on? You might see that. Yeah I it's the one it says that 12 uh uh.
+Speaker 2:
+Oh yeah, it really is getting up there in the summer for you. Even over the winter too, do you have gas heat?
+Speaker 1:
+I, I have, uh, liquid heat. OK,
+Speaker 2:
+that looks
+Speaker 1:
+I got liquid and gas. I got gas stove.
+Speaker 2:
+OK.
+Speaker 1:
+That's the main thing. So I cook all gas, but I heat my electric and I got the AC unit. Mhm.
+Speaker 2:
+Well, here's what I'm gonna do. I'm gonna enter in these uh values for each month into this uh simulation. And I have like a 3D model of your house pulled up, and I'll be able to tell you exactly how much this program could save you. But our job is, is really easy cause um, I mean, it's, it sounds pretty cool, like, hey, there's no cost, all the power is free like. What's the catch, right? So someone's paying for it. It's just not you.
+Speaker 1:
+And that's what I'm trying to figure out who pay for this.
+Speaker 2:
+Yeah, so it's
+Speaker 1:
+like why would you know gonna be years from now say, oh. You missed something, you owe 2 or 3 might be 10,000. Who knows? Yeah,
+Speaker 2:
+the catch is it's, uh, it's not gonna cost you any money. Uh, it's just gonna cost you an arm and a leg, but you get to choose which arm they take and you get to choose which leg they take from you too. Mm. Like it'll cost an arm and a leg. Yeah, you've never heard that. You have you heard that
+Speaker 1:
+like I heard of it, but hey, I'm trying to avoid that part. I don't want, yeah, because I have paid the arm and a leg.
+Speaker 2:
+Let's see. So, the, the reason why they would pay for it for you is because in DC in 2018, they passed the 2018 Clean Energy Omnibus Act, and the reason they did that is because they wanted to mandate that by 2032, so that's like seven years from now, 100% of our power has to come from renewable sources. And they got like a 12 megawatt biomass generation facility. They're they've almost completely switched away from coal generation. A lot of it's like natural gas. There's all these like huge megawatt solar fields and everything, but they don't have enough space to build more solar fields. And not only do we have to get 100% of our energy from clean sources, the sources has to come from inside the district.
+Speaker 1:
+Right.
+Speaker 2:
+So if you were PEPCO, you would just want to build, you know, as many solar fields as you can to satisfy the requirement and then just ship it in and, you know, charge people even more. But the problem is they don't own any more land to put more solar fields. And what that did is it pretty much made everyone's roof space prime real estate for solar panels, and PEPCO is paying top dollar for it. Because every time they help someone pay for their solar system, they avoid an oppositely larger fine. So it's like they can either, you know, get fined $500 for 1000 kilowatts of dirty energy, or they can pay like $400 towards your system for each 1000 kilowatt hours that yours produces. OK. So what's in it for them is they really just want to use your roof space to collect what PEPCO's paying. So they'll, it's solar's not cheap. Like, it's like 20 $30.40 $50,000 but they'll, they'll pay that like let's say your system's $300,000 they'll fully fund that $30,000 project because they'll at some point, you know, down the line, whether it's like 567, 10 years from now, they'll make all their money back and then those incentives are scheduled out to like 2041. So they go down over time, but they get a nice return on their investment over 20 years, and then you get free power.
+Speaker 1:
+OK.
+Speaker 2:
+Does that make a little more sense?
+Speaker 1:
+Uh, kind of, I'm, I'm not, you know, I ain't I ain't focus, but what is this thing about this clean air choice of energy? Oh yeah, yeah.
+Speaker 2:
+Oh my gosh. Well, it doesn't look like you signed up for it because if you
+Speaker 1:
+did that's what they was trying to.
+Speaker 2:
+Oh, they, and they sure try pretty hard because I
+Speaker 1:
+the same day that I was talking to uh. Uh, one of the guy, the guy that,
+Speaker 2:
+yes,
+Speaker 1:
+I was saying I said, they said just send this in and I was gonna send it in and see what it what it come, you know, what it's gonna be, but Oh yeah, I see. Well, I'm looking for the solar panel. I'm looking for something on the roof, but I don't understand this part. That's the reason why I want to know exactly what is this.
+Speaker 2:
+Oh
+Speaker 1:
+yeah, what is that, uh, is this gonna be solar panel or what I I I guess I pronounced the word right.
+Speaker 2:
+You got it. Yeah, so. Clean Choice makes money by selling people, uh, solar power that is connected to PEPCO's grid, and they just use PEPCO's grid to get it to you. So it's like signing up for instead of PEPCO, it's like getting your power from, well, it's a third party company.
+Speaker 1:
+Oh shit, OK.
+Speaker 2:
+So it's not they'll like send stuff in the mail that makes it look like it's like required or something, but like really what their uh idea is, let's say you give them a call and you're interested in the solar stuff and they're like, well, hey. Instead of putting panels on your roof, you know, we can actually just use the solar fields that we have in like New Jersey, and we can ship all that power, the clean power from New Jersey all the way to your house and here in DC. And you, and for doing that, you know, instead of paying 18 cents a kilowatt-hour with TEPCO, we're gonna give it to you for 9 cents a kilowatt hour. So not only do you get to save half on your bill, but you're going to get 100% of your energy from clean energy. That sounds pretty great, doesn't it? So the catch is they get you in at like a introductory rate where you're saving a lot, so a lot of people will switch to Clean Choice because it's a cheaper electric rate.
+Speaker 1:
+Yeah, I know they say something about, uh, they had, I was reading I was checking it out, something about 13%. Yeah, that's how, that's how low it was you know
+Speaker 2:
+sounds pretty good.
+Speaker 1:
+Well, you know that was my choice for a minute.
+Speaker 2:
+Do you want to know what they don't tell you? What? So what they don't tell you. Is the rate that they sign you up for that's like a it's a cheaper cheaper rate than you're currently paying. You'll save money in like the 1st 6 months, but after 6 months or a year, they'll actually jack your rate up to, yeah, it's usually like uh like people will be paying like over 30 cents a kilowatt hour than what they're paying with PEPCO, like this guy. So, I, I probably canceled like 30 clean choice accounts last year for people cause like, um, let's look at Gregor. Yeah, so they have clean choice. And these guys had money, so they like didn't really care, but documents, let's look at his bill. So let's see, the bill that I got from them,
+Speaker 1:
+so
+Speaker 2:
+previous
+Speaker 1:
+balance,
+Speaker 2:
+so 40 dollars electric distribution from PEPCO, $180 from Clean Choice supply charges. So his electric bill is $22,190 or like, let's just call that 222, and he used. 783 kilowatt hours. So his co watt rate, $222 divided by the was it 783. He's paying 28 cents a kilowatt hour. You're paying This bill was 150 for. Do you have the other page of your bill?
+Speaker 1:
+That's what I was looking for that fact I was.
+Speaker 2:
+November to December. And find it on here.
+Speaker 1:
+Um, oh,
+Speaker 2:
+actually I found it. Yours is 841 kilowatt hours and you paid 150. So your electric rate that you paid. 150 divided by 841. You're you're paying about 18
+Speaker 1:
+cents.
+Speaker 2:
+So he's paying like like 50% more for his electric because he signed up with them, but he probably got in like they're like, hey, instead of paying 18 cents with Pepco, do you want to pay like, you know, 8 or 9 cents with Clean Choice and get it all from uh Clean Sources? Yeah, that sounds great. And then they just jack your rate up the next year.
+Speaker 1:
+So like they have something like uh. A third party, and that's why I, I used to catch the devil with them because they would go up. They be called man what I had done. That's why I canceled a couple of them like that. Yeah,
+Speaker 2:
+because it's like they, they're gonna charge it like an extra 23 cents.
+Speaker 1:
+Yeah, yeah, because they had a separate cost they was putting on me and I said well. I Pepco taking this and they got that blah blah that's how they get you and that's why I had to cut it off. I told them I don't know. And the lady was telling me, said, well, you don't have to have a third party. Yeah, so that's what that's why I got this one and I determined I don't want to get caught up in another one. Well, I got a third party. I got to pay them something because of this and that and that
+Speaker 2:
+no one's got ain't no one got time for that. I'm paying you know this amount of time, yeah. And that's why I, I love my job, because this program, we, I never collect any payment info from anyone. You get locked in to a 0% guaranteed electric rate for 30 years. That'll never go up, never change. There's no taxes, there's no fees, there's no credit check, there's no income requirement. All you have to do is live in DC, own your home, and have a good roof, and they'll fully fund your project because when they fully fund your project, they're getting incentivized by DC and the federal government to pay for it for you and then My job with Sustainable You and what Rob and Matthew and all the other people we're uh uh connected with, we're just trying to get as many people free power um as as we can while this program still um is available.
+Speaker 1:
+Oh, OK, I did, uh, I had my roof done about 6 months ago. Oh, it's a new roof, yeah, but, uh, the guy still had to complete like I want him because I had to call him back because I got a. One of my bedrooms upstairs got a little drip coming from the backside, and that's the only problem because everything else is perfect. But uh like I was telling them. I don't know why it is leaking that, you know, but it's, it's coming from the outside, inside some kind of way. So that's the only thing that I got that I know I have a little problem with that's right now, yeah. Yeah,
+Speaker 2:
+well, we'll come back and put the panels up there later tonight. Do you think you can have your guy come out? I'm just kidding. It, it'll be months before they, um, that, that's like the other catch with these projects. It can take like 3 or 4 months to actually get them, uh, done for you because like it's a lot of like we gotta get it approved by PEPCO. We gotta get it approved by if you want, um, the installer that we usually have put these projects up. The reason why we use them is they're a roofer, so like that's who I put um this project through. So when they go and um like I'll show you Mark. So like, a lot of these projects, like they'll need a new roof, and it's like, well, we could look for like a roofing contractor and like subcontract it out, but like, it's way easier we can when we can do it in-house. So, like, he had He had like a leak as well, and like, it just like wasn't the greatest conditioned roof. There's like some stuff around the chimney we need to replace. I think we're redoing the skylight for him, but like his flat roof was like generally pretty old and it's like cracking. So it doesn't always happen like this, but his was a larger project. We get more funding for it, so we can use the extra funds that we get with this program to help cover roofing costs and when we have one company here doing the roof project and the solar project, they don't need to make money. On the roof, so they just like, you know, they can do it at cost and we don't have to pay a subcontractor tractor that needs to make profit as well. So it's like way cheaper. We get more funding. It's a lot faster because it's one company, but like you just got a leak, we'll fix that leak for you and like we won't even charge you for it.
+Speaker 1:
+You know that's the main thing because I'm,
+Speaker 2:
+I'm mad because I try to get them to do it like that for you. You shouldn't have to pay for that either.
+Speaker 1:
+Yeah, but like, you know, this guy was supposed to be coming back, but like I told him it's just when they put that, uh, what do you call it, I say drain but that's the gutter. When they put the gutter up, they didn't do that uh that uh. Put that piece of board behind it, and like I told him I said just because the board look good, that don't mean that it ain't because this is might be where the where I get my link from the outside coming in. That's, that's my board right there, but. And I'm in the process right now. My son said, well, uh, you know, this is the mutt. He said once the weather break, he gonna call them regardless too and have to come out. Again, you know, this time and make sure they do it because I paid that money. Yeah, they they didn't complain about the money, but so I figured like this, hey, I, I, I deserve this. Yeah. I wanted, I just want to stop. That's all. That was the purpose of fixing the roof because of one room that was leaking and I couldn't, I did everything. I'd say that, but uh I know a roof had to be done.
+Speaker 2:
+So you're pretty, you're, are you usually pretty handy with the house stuff?
+Speaker 1:
+Yeah, OK. Yeah, mostly I try to do most of my stuff. Used to. I ain't got to the point now. I can't do it. I'm gonna tell you the truth. I had to pay people to mostly that's what I'm saying.
+Speaker 2:
+Well, even if you wanted to, it's like no one's got time for that, so. OK, let me ask you this. If you had to guess what you spent total on the PEPCO bill last year, what do you think you spent over the whole last year on the PEPCO bill?
+Speaker 1:
+Oh. Yes they say that we. Well, I know I've been getting 20-300 dollars. I've been getting $300 for about 2 months, 2, at least 2 months I would get over $300 worth and the rest of the time it would be something like about 2. Mhm. something like 220. I can't add that good. I'm 75 years old. I can't go I can't go back too far. I might get stuck. Oh,
+Speaker 2:
+that's what you got me here for. All those months I looked at on your bill, it added up to about 12,000 kilowatt hours of energy, which is definitely higher than normal, but I would say pretty normal for someone having electric heat. The kilowatt hours times the current electric rate, it's about $2300 a year. So maybe close, maybe a little less than that because the rate has gone up. So maybe you spent like $2100 or $2000 but still that's like a lot of money. Like you're pretty much buying a new roof every, you know, like 4 or 5 years they
+Speaker 1:
+they give me 10, I guess I didn't say 10 years. Every time a year, you know, after 10.
+Speaker 2:
+So let me ask you this. If you, let's say you did solar a year ago, what do you think you would have paid in electric charges if you already had the solar installed? Instead of the 2 2300.
+Speaker 1:
+My average. Per year, I would like to know you speaking of the month they are a year,
+Speaker 2:
+the year, what, what would you think it would go down to? Or what would you want it to go down to?
+Speaker 1:
+I can't go that high up. I can go by the monthly. I just thinking about my monthly bill.
+Speaker 2:
+You tell me the
+Speaker 1:
+monthly 100 and let's say about $150 I would say. Less than 2, yeah, I'll say less than I can't say, well, less than 200, I'll put it that way. Oh,
+Speaker 2:
+it's definitely less than 2001. So I'll show you this. Your roof space would be good for about 11,500, so you get about 92% of your electric charges covered, and what that would look like is that 11,000 kilowatt hours the system would do at the current electric rate. It's about 2150. So, if you already would have had solar last year, Instead of paying $2300 you would have paid 179. So like your monthly bill only would have been like 1515 to 30 bucks. Because we can't, uh, we can't get rid of the, uh, the charge for the meter. It's like the $16 you pay every month for the just to be hooked up, so you still get that, you still get your electric statement, but your average electric charges with this would be about $15 a month over the whole year. Or like, it'd be less, it'd be less than $200 a year that you'd have to spend on power now.
+Speaker 1:
+But the meter, I noticed uh when you, when you put the uh. See what I can't, you know, keep the name right. They run the electric. You don't have a meter then, do you? I, I see the guy, I don't know how his works. Like with the solar. He got his like they took the Pepco line out, not well, not well they took the meter, but they just hooked hooked the line up to the to the house. I know you know that's something I wanted to see if, uh, do I, will I still have a meter out out back
+Speaker 2:
+so this is, let me see if I have any clients here
+Speaker 1:
+yet. So
+Speaker 2:
+I usually stay pretty close to
+Speaker 1:
+mine. Oh yeah, we helped out
+Speaker 2:
+Stanley, Jackson, we're right there, um, we helped out Stanley earlier this year. Let me look up
+Speaker 1:
+109 Trenton, so Stanley. So
+Speaker 2:
+you'll still have the
+Speaker 1:
+um Jackson,
+Speaker 2:
+you'll still have the same hookup to PEPCO, and let's see if they
+Speaker 1:
+put the inspection pictures. Yeah. OK, because he looks different. He's got the, you don't have a meter. That's what I was looking at is, yeah, yeah, maybe, uh, which uh, he used to have one like this, but he got it running, the wires running in into it some kind of way. I like popped out.
+Speaker 2:
+Like, does
+Speaker 1:
+it look like um. I might have been looking at the wrong thing, but does it maybe look like
+Speaker 2:
+we had something that sounded kind of like that
+Speaker 1:
+with
+Speaker 2:
+this lady.
+Speaker 1:
+Where's her meter? Yeah, hers was like popped out something like, well, it got more of a little like that.
+Speaker 2:
+I think that was the picture of what it looked like after they fixed it. It was worse than that.
+Speaker 1:
+But yeah, it was like they look like that. Yeah, right now, well, it got, it got the, I guess that this part just didn't have that part on it. So I'm I'm quite sure they might have been just using that for. Could have, could have been waiting to do a replacement or something. But I haven't look at him. He, he lived in the corner house. That's why he got this panel too.
+Speaker 2:
+Your neighbor there.
+Speaker 1:
+like a
+Speaker 2:
+couple doors down that way.
+Speaker 1:
+No, it's right here. This, well, that's the, the one you thought that one right here, I think you just pointed him out. Oh yeah, I'm on the, on the corner right here, that one. Yeah, that's, that looks like it's tough. 2:38. Let me see if we did that one. 238. 238, what was it? Savannah Street still Anna Street. Um,
+Speaker 2:
+we did 2:34, I think,
+Speaker 1:
+yeah,
+Speaker 2:
+Minnie Harper,
+Speaker 1:
+uh, no, there's a guy here, he just had his done about a month ago.
+Speaker 2:
+Yeah, we did, uh, we did that one, we're at there they did that one.
+Speaker 1:
+OK, see, I'm at, I'm at 244. So you back in, I think you back in the back of a little um oh wait they oh yeah, they just signed up. Oh yeah,
+Speaker 2:
+they signed up like a couple days ago on the 14th January
+Speaker 1:
+14th, yeah. Interesting. Yeah, well, I'll get back to what we're doing and uh
+Speaker 2:
+oh yeah, oh yeah, I could talk for hours on all this stuff
+Speaker 1:
+that's like,
+Speaker 2:
+that's like where what we um do for you guys. It's like if you, you were telling me how hard it's gonna be to like get the roofer to come out here and just fix a leak like. That's like that's way too much. It's like if you, there's 156 steps from when you like enroll for the free solar program and then actually getting it on your roof and it's our job to manage the project like fully from the time you enroll to when it gets actually put on your roof and the reason there's like so much that goes into it is like. We have to get approval from PEPCO to interconnect the system to the grid, so that you can not only send clean power to your home, but send excess power back to the grid if you're ever making excess. And if PEPCO doesn't approve it, if we don't get the permits back from the city, if the city doesn't check off on it, then it's like, you know, they, they can stop you from, from doing it. And they do try to do that on some projects, like, cause obviously PEPCO loses money when you start getting free power from the panels. But they're, they're also kind of forced to let you do it because it's like, well, they can pay a huge fine or they can pay less to help you pay for their system, but they're also losing you as an electric customer for you so they don't make it too easy for us, but, uh, we still try to get it done and
+Speaker 1:
+but I thought there's something that Pepco wanted to, you know. Well,
+Speaker 2:
+you could kind of say you could kind of make it look like both ways because like they want to help do the solar because they're forced to buy the legislation and it's like the only reason they want to let you go solar and help you go solar is because if they don't help you go solar, they're going to have to pay even more money and fines to the city. If those fines weren't there, they wouldn't be helping you. And that's why there's only free solar in DC, and we have amazing legislation here that's like really progressive to help us get clean energy and in like Maryland you can't go free solar and like Virginia you can't go free solar. This is the only place in the entire world that you can get this all paid for and um that's why we're trying to help as many people get into it as um we can before the program goes away.
+Speaker 1:
+And another thing about this, you know, where I live, we don't have no uh. No electric poles. We just our, our energy come from others. That's why a lot of people say. You see that how you get your power, it come from the ground. Yeah,
+Speaker 2:
+now under the ground it's gonna come from the sky. Or we, we'd at least hope for that, um, because typically, typically what I do for folks is we set up an inspection and like kind of like all those pictures I showed you and I don't know if we did it for Minnie down the street yet, but we come out and or no there weren't pictures on her job, so you'll probably see us over there sometime this week. We will come out, we'll take a ton of pictures of the main service panel. We'll get up on the roof. The ladder we can check out that leak if they haven't come by to fix it yet, but worst case scenario, we'll fix it when we come to your install, um, but they should be able to get on top of it for you before then. Um, but we'll, we'll do the inspection. We'll make sure everything's good to go if you just got the roof replaced, you know, you said 6 months ago,
+Speaker 1:
+yeah, about at least 6.
+Speaker 2:
+OK, minus minus that leak you should pass. And then we'll come up with an engineering drawing and the plan set for it and then we'll send all of that into PEPCO with like, hey, we're gonna propose to do this project on this property here and then they'll kind of review it for a month or two and if they give us approval to install, you'll be good to go and we'll proceed to getting permits from the city. If they're like, no, this one can't go solar, then it's like, well, at least we tried. But typically it's like it used to happen on a lot more projects like it would have they would disqualify like 1 out of every 4 or 5 projects we would do and then the attorney General got involved because it's like hey we're like supposed to be transitioning to clean energy, but hey PEPCO, you're like you know saying all these people that are trying to make the transition like can't do it like what are you doing? PEPCO, what they would do is they're like um. Oh, we're gonna disqualify this, this house over here because, uh, uh, the transformer in the in the neighborhood needs upgraded. So if they want to go solar for free they're gonna also have to pay 2000 of uh grid grid upgrades. So it's like, hey, do you wanna upgrade the transformer for us, which like we just cancel the project at that point because no one's gonna pay that. And the attorney general found out that those were pretty much all bogus and like they were just trying to get PEPCO customers to. Literally pay their grid upgrade costs so they could profit more and now it, it still happens it's like a lot less common. It's like 1 out of every 50 projects or or 70 projects now, but it's like we still run into it and like the more people that we have come together and like do this program, the more leverage we have to like make PEPCO like not be like so controlling because they're a monopoly and we're competing against a monopoly um. Um, but that's, that's me going on another tangent, but we, uh, we really just try to get approval to install from PEPCO, and all I do with you is I just set up an inspection date for you. You, uh, fill out the zero cent rate forms for getting free power, and then I'll take a picture of your electric bill, and then PEPCO wants your driver's a picture of your driver's license, and then that's like pretty much it. We'll come check it out next week. That sound good?
+Speaker 1:
+You got it. OK, got you.
+Speaker 2:
+Well, let me find
+Speaker 1:
+out, that's what I say you started, OK, let me, what you need. Um,
+Speaker 2:
+let me, I'll take a picture of the bill, um,
+Speaker 1:
+well, that's, that's my last one because I, I always, uh. Well, that's good enough right there. Yeah,
+Speaker 2:
+they need, it's any bill. It doesn't need to be the most recent one, but I do need all the pages of
+Speaker 1:
+it. That's what I said. I didn't. I'll be toss and stuff that's me I trying to. Keep the keeping a lot of stuff that's all.
+Speaker 2:
+OK, if you need to look for it for a sec, it'll just take me a minute to come up with this,
+Speaker 1:
+uh, that's not just paid to be. I just paid that's. Matter of fact, a couple of days ago, and I threw half of it away. That's why I just keep that part and another part that's what.
+Speaker 2:
+That's OK. Not everyone has their, keeps their full. Well, some people I meet with, they'll, they'll like have all their electric bills from the past 10 years and a nice little file folder. I
+Speaker 1:
+used
+Speaker 2:
+to,
+Speaker 1:
+yeah, that's doing too much. Yeah, I got I got a lot of trash I think. Every time I do, I just keep this spot. And that's it.
+Speaker 2:
+That's OK. Um, we can get away with just this is fine. Just make the submission to PEPCO, we, uh, if a page of it has the account number on it like this one does, will that do? That's good enough for now. I will need to collect the pictures of the full one at some point, but that won't like impede the process at all.
+Speaker 1:
+Yeah, I can uh I can't really worry about this, oh. I, I'll hold it but I have to call you and say I got it,
+Speaker 2:
+despite the urge to toss it, I guess,
+Speaker 1:
+yeah, that's all I have to do. I did tell you I got it. I'm gonna hold it. Um,
+Speaker 2:
+what was the street address again?
+Speaker 1:
+This is 244 Savannah Street. OK. Great. 244.
+Speaker 2:
+All right. And then we have to make it match the city records. You're uh Jerry, but you go by,
+Speaker 1:
+don't put that's what everybody be saying Jerry. Oh, I get confused with that Jerry and they got me a lot of places say Jerry, uh, my name is Terry.
+Speaker 2:
+That's so
+Speaker 1:
+funny. Yeah, see that's, that's where I get confused my bills come in here and say Jerry Jerry.
+Speaker 2:
+You know it's funny. So PEPCO will For them to accept the application, it has to match the city records
+Speaker 1:
+it's supposed to, yeah, see that. Huh, and it's me. Yeah.
+Speaker 2:
+And then when I put this in our, uh, CRM, they, they'll get mad at me and they'll be like, why does it say Jerry in one place and Terry in the other place? And then there's just like an extra form we send into Pepco that's like, oh hey, this is the same. Person, you know, we run, like some people, their name on the City Records, it's like, um, like Johnny, his name is Johnny Hemphill and City Records has him as like JR. It just has his initials. So it's like who's Jay Hemphill, you know, like that's not a name, it's just the initials.
+Speaker 1:
+Yeah, I'm glad we got that together because you to come back with that. I said that ain't gonna work. Yeah, no, not Jerry.
+Speaker 2:
+Sometimes it, uh, sometimes like things like this like will kind of prompt them to update the city records or like uh update your name. Some people have the opposite. They have their name right on the city records, but it's like wrong on their bill.
+Speaker 1:
+Yeah. I got 2 or 3 of them last week, so and I said I see. These are the people that I don't talk to because they got my name, my name wrong and I don't, I don't answer. I just say, well, hey, I don't know this person.
+Speaker 2:
+Well, I'll put a note down to uh to call you Terry.
+Speaker 1:
+Yeah, 11564.
+Speaker 2:
+So I just gotta put the estimated some system info on here.
+Speaker 1:
+Yeah. Do that well, I'm glad you did stop here because I was. Like my son said he got it at his house. Yeah, because he's the one that that said that I should, I should go ahead and get it, eliminate some of that cost I'm paying out here for nothing.
+Speaker 2:
+When did he get it done?
+Speaker 1:
+Well, it's been, well, he moved into a house. They, they had to do uh renovate whatever they had to do the whole house. So he just started from there. He got it done everything. So he was living there now 3 years. It's been a while.
+Speaker 2:
+Oh dang. I wonder if he even got the, um, that was about, do you know if he did the free program?
+Speaker 1:
+Most likely
+Speaker 2:
+that was about when it started. He might have been one of the first one
+Speaker 1:
+he was the one, yeah, like he was telling me we should do that. Because he's my little super boss. We always have one. He come by and tell me this and tell me that he should do this. I'm surprised he come through the day, but the weather wise,
+Speaker 2:
+he usually stops by and hangs out with you. Well,
+Speaker 1:
+yeah, call me every day, every other day. Oh, that's good. Because I can't go out like I used to, you had to do. Food shopping and all kind of stuff.
+Speaker 2:
+Well that's very helpful. How many kids do you have?
+Speaker 1:
+I have two boys. I have a daughter years ago. She retired from the police department, and one of them, he drive metro and. When I'm talking about, he do cable, he's uh that uh cable.
+Speaker 2:
+How did your, uh, did you also,
+Speaker 1:
+uh,
+Speaker 2:
+were, were you also in the police force?
+Speaker 1:
+Yeah. No, I work for the DC public schools. I I did my 33. 0 wow, man, I was, I retired 15 years ago. That's why I'm sitting back. I ain't did that for 15 years.
+Speaker 2:
+Yeah, you gotta enjoy your
+Speaker 1:
+retirement. That's why I said I did mine. I had kids around 15 years, you know, you're dealing with elementary kids and all that, and we looked like we had the roughest kids, but uh. I did it.
+Speaker 2:
+What did, uh, what did you teach?
+Speaker 1:
+I wasn't a teacher. I was more like working in the uh maintenance like uh engineering department. Make sure they got warm, well, you know, warm uh classrooms and make sure the water is up. No, run in the water. So we did all that. Right on. Um, OK. And then OK.
+Speaker 2:
+What is the best phone number for you?
+Speaker 1:
+Uh, cell phone, that's the only 1, uh, 202-848-0553.
+Speaker 2:
+And what's the best email for you?
+Speaker 1:
+Well, I don't, that's something I don't, I don't mostly know because my sons, they always get an email for me and if I got to call them and find a good. Oh OK.
+Speaker 2:
+They just have me put one down. I can, uh, I'll leave it how it is for
+Speaker 1:
+now.
+Speaker 2:
+But if there's one you can like get from them, that would be helpful. We just, uh, use it to send out updates.
+Speaker 1:
+Mhm. OK,
+Speaker 2:
+I get that.
+Speaker 1:
+Let me see. Yeah. Right. Uh.
+Speaker 2:
+Are you trying to find the email it'd be really helpful to have if you do find it.
+Speaker 1:
+Yeah.
+Speaker 2:
+And I'll also pull up the site survey calendar, see what they got
+Speaker 1:
+open. Yeah Yeah. Yeah. That will look back up. Yeah. Right.
+Speaker 2:
+Are you gonna be around here next week? Mhm, OK. Next week is pretty open.
+Speaker 1:
+Yeah. This. Right. Oh. Yeah. Mhm. Yeah,
+Speaker 2:
+I wonder
+Speaker 1:
+if that will work. OK. OK.
+Speaker 2:
+Not coming up. Yeah man.
+Speaker 1:
+OK.
+Speaker 2:
+You can just text it to me when, uh whenever you find it.
+Speaker 1:
+Um, OK. Mm.
+Speaker 2:
+All right, let me find a date that works, and then starter, oh no, I should probably fill that first email,
+Speaker 1:
+review that.
+Speaker 2:
+OK. Uh, they just have you initial this for publicity that just lets us take a picture of the system, uh, when we're done and, uh, kind of like I, I was showing you pictures of like other people's work that we've done for, and then they just have you sign off on the bottom. And this is the, it's called a power purchase agreement, uh, which is really awesome because it's the same thing you have with PEPCO right now, but instead of PEPCO, it's uh $0 installation costs and it's a $0. electric rate looks like I put the estimated production and everything on there and I usually say like hey like we'll probably get them up there for you and panels turn on by sometime by the summertime, um just like at the latest. A lot of times they go in in like 3 or 4 months so like
+Speaker 1:
+I'm, you know, yeah. Just I don't have to go through this. I have to find another one that somebody else might trick me and then I know I got you, but I heard from you, but you know how that go.
+Speaker 2:
+Yeah, so there's like this is all that's needed. Some, there's some companies that like they'll send you stuff and like try to get you to sign extra stuff, but like there's nothing you have to do. There's no payment info we need because what you get out of it is we insure, maintain repair system. Something, no cost to you. The full warranty on it. So as long as you don't like purposely break it yourself, like as long as you don't hop up on your roof and start smashing it,
+Speaker 1:
+I can't go oh no, unless the tree fall on it, that's about it, yeah.
+Speaker 2:
+And even if a tree fell on it or like if a hurricane came and destroyed your house, if a like panel was defective or if your inverter goes out for some reason, it's on them to cover everything for you. And also like, they have another incentive to come out and fix stuff for you, cause if the system isn't making power, they're not collecting their incentive from the city. So they also they'll come out here. The warranty forces them to take care of it, but they'll come out here pretty quick to fix it, because if it's not making power, they're not making their money, and then you're not saving the money, so. Works out pretty well, uh, like week warranty, just like I hope the people that did work out your roof has a leak warranty so they can get that fixed for you. We have the same thing, um, and most importantly, the, the rate that you're paying, the 0 cent rate, that'll never change, increase, and like I said before, there's no taxes, no fees, nothing like that. You're just getting free power for 30 years. And then,
+Speaker 1:
+hm. I ain't gonna be around, but uh they sell. Oh yeah, most people,
+Speaker 2:
+it's a, it's a lifetime guarantee
+Speaker 1:
+that's it, yeah, um,
+Speaker 2:
+that one's just initials and you can just uh doodle it on there. It doesn't need a pen or anything.
+Speaker 1:
+What? Wait a minute. I, you know, I'm a little jerky jerky, guess what?
+Speaker 2:
+It'll let you draw your initials, um, on the screen. And if you make a mistake, you can clear it out as well.
+Speaker 1:
+That looked like it might be OK to you.
+Speaker 2:
+As long as it's
+Speaker 1:
+closed.
+Speaker 2:
+Cool. And then that one signature. And then you'll get an email from, I guess not an email, um, that's what that's why we get an email for you. Um, we'll usually send out an, oh, that one's actually signature, or is that how you do your
+Speaker 1:
+signature? Oh, you said signature. Yeah,
+Speaker 2:
+that's why
+Speaker 1:
+I thought you said initial
+Speaker 2:
+the other one was initials that one, yeah, you're good. Um, Uh, cause we like to send out like a welcome email to everyone, uh, from James. He's like our client success manager, and he, he does a lot, he sends out a lot of the updates and, uh, helps my clients with a lot of their stuff. And he usually sends out like a copy of like, OK, here's your design, and like every all the paperwork and everything, just so you have it on file, and then there usually isn't like any updates until the Inspection is done, but typically after the inspection, uh, if that all looks good, we'll proceed to send everything to PEPCO, and then PEPCO approval, city approval. And then you'll be good to go. Let me find a date on the site survey calendar.
+Speaker 1:
+Let me fill up, maybe I can get it. Oh,
+Speaker 2:
+that would help me cause I, I, I'm doing like 3, we're doing like 3 or 4 of these a day, like right now, cause like everyone's trying to get it before like inauguration day. And um I if I don't do things when they come up like it just gets lost in the to do list. I ain't gonna tell you I
+Speaker 1:
+don't
+Speaker 2:
+I,
+Speaker 1:
+I know it's it's not there all the time. Mhm.
+Speaker 2:
+Would a Monday morning work for you to do the inspection? Yeah, you will have to be here to let them in and check the main service panel, but other than that, it's all outside and it usually takes about 30 minutes.
+Speaker 1:
+What do you, what do, somebody gonna come past. Uh, what, uh, what, uh, what, what, what, what, what.
+Speaker 2:
+It'd be a week from today, um, so next Monday, and we could do 11 a.m., 1 p.m., or 3 p.m. next Monday.
+Speaker 1:
+Mm, let me, let me get my sister-in-law she know it. Let me call her.
+Speaker 2:
+Oh yeah, yeah, give her a call and then we'll figure out that yeah because she,
+Speaker 1:
+she works from home. She Hey. Hey, how you doing? I'm good. Hey uh, can you, could you give me an email? I got this guy here, he's doing my solo, uh, thing and I need an email so if you could just tell him. The email that, that'll be good for me. OK. OK. Hey,
+Speaker 2:
+how's it going?
+Speaker 1:
+Hello, how are
+Speaker 2:
+you? I'm doing good. What was your name again?
+Speaker 1:
+I'm Eric Erica,
+Speaker 2:
+great to meet you. Oh, do you, are you related to someone named Tanya McDowell?
+Speaker 1:
+Not that I know of, but could be, but I make that.
+Speaker 2:
+No worries. I just, or I should have seen it when I was looking at um Terry's name here, but yeah, we have a we have a lady we helped out named Tanya McDowell down the street. But um, yeah, do you have a good email for Terry here that we can put on file?
+Speaker 1:
+T as in Tom E as in Edward. You A 40 At gmail.com. Perfect.
+Speaker 2:
+And do you already have solar on your house in DC?
+Speaker 1:
+Yeah, I see. I'm not in DC.
+Speaker 2:
+OK, you're in uh Maryland then?
+Speaker 1:
+Yes. OK.
+Speaker 2:
+Have you ever looked at any of the programs there? I don't. Oh, OK, no worries. I know in Maryland it works out for a lot less people, so
+Speaker 1:
+she's on
+Speaker 2:
+the
+Speaker 1:
+job
+Speaker 2:
+from home. That's OK if you're, oh, OK, I'm just chit chatting. Thanks so much for the help, Erica.
+Speaker 1:
+OK, thank you. Bye-bye
+Speaker 2:
+now.
+Speaker 1:
+Thank you, Erica. OK. Yeah, she is, she worked from home, so that's why I figured I'd call her. She may, she, she'd be at the phone, but she Doing work right there, OK. And
+Speaker 2:
+OK. For, uh, for Monday, I still got 11 a.m., 10 p.m., or 3 p.m. We could, uh, pop by any of those times for the inspection.
+Speaker 1:
+Well, anything after one because mostly I'll be, I'll be up. OK.
+Speaker 2:
+I'll just do
+Speaker 1:
+what day is it? Oh,
+Speaker 2:
+the twenty-seventh, Monday. Just a week from today.
+Speaker 1:
+I got I hope it don't interfere because I got a doctor appointment coming up and I don't see that's the only thing
+Speaker 2:
+you put on Tuesday or a different day.
+Speaker 1:
+It's in that week. See, I got, I got a doctor appointment and I got 2 days of it. When I go and get my, uh, go, go and get my examine and then the next day I go to the doctor.
+Speaker 2:
+And that's on Monday and Tuesday. Well,
+Speaker 1:
+I'm trying to figure out what day. See, I gotta, I gotta go there and see, uh, and let's say, well, we could go with Monday, just, just hope.
+Speaker 2:
+Monday afternoon. Yeah, the 3 o'clock,
+Speaker 1:
+yeah, because I don't, I know about Tuesday probably that might be the doctor. OK so let's say.
+Speaker 2:
+I'll, I'll put a note down. You'll get a, you'll get a text in a moment, and it's gonna say, um, it's gonna say hi Jerry, because I have to have it match the city records. I'm gonna put a note um for them to uh have it say Terry, or like when they reach out to you for it to say Terry.
+Speaker 1:
+Mhm. Please do.
+Speaker 2:
+And I'll see if they can text. They usually do a reminder for the inspection over email. I'll ask them if they can send it over text or try to give you a call,
+Speaker 1:
+OK? Yeah, because I, I do, I can get my texts because see I'm just sometimes these phones are a mess. Yeah. Yeah cause my boys had to teach me how to do the text thing cause I didn't know how to text. It took me a while, but I'm learning. I can say a few of them, but I ain't going long. I said, oh, that's good. Hello, Goodbye. That's all birthdays. Happy birthday.
+Speaker 2:
+Oh Well, it'd be, I think sometimes it'd be nice to go back. Before, before I had a phone, cause I, I got like a work phone now, my personal phone, and this thing, and I got my freaking laptop in my backpack, like, I, I, I want to like toss it, put all the technology in a backpack, in in my backpack, throw my backpack off of a cliff. And just camp in the mountains for a week or two.
+Speaker 1:
+where are you coming from? Where, what, like
+Speaker 2:
+where I grew
+Speaker 1:
+up,
+Speaker 2:
+or like where I grew up?
+Speaker 1:
+Well,
+Speaker 2:
+I grew up in around Akron, Ohio.
+Speaker 1:
+Oh
+Speaker 2:
+yeah. We got the Pro Football Hall of Fame and that's about it.
+Speaker 1:
+Are you familiar with the game coming on today?
+Speaker 2:
+Oh With oh yeah Ohio State and Notre Dame. Oh wait, it's a championship.
+Speaker 1:
+Oh, that's what I'm saying. We got
+Speaker 2:
+the inauguration day. We got the Ohio State's gonna win the champ.
+Speaker 1:
+Yeah. Well,
+Speaker 2:
+I used to follow the football a lot more, um, cause I, I went to Ohio State for my last year of college because I went to this like small college, Mount Union, to start, and then I went to Ohio State for like the last year I was in school and it was pretty fun like on all the games and stuff. And then, and then I just got like busy with work. I don't watch it as much. I was like, oh crap, they're like in the like top 4 now, like dang, oh man, they're that. I went back to Ohio, um, the, I like almost forgot. I went back for the um. Who did they play uh?
+Speaker 1:
+Who did they play
+Speaker 2:
+to win um get in the championship? It was. I can't even remember it was um.
+Speaker 1:
+Crap, yeah, the Georgia, uh, Michigan, uh. Uh.
+Speaker 2:
+Texas,
+Speaker 1:
+it was, yeah, yeah. Screwed up on the end. Oh yeah, they
+Speaker 2:
+got, they got ragged on.
+Speaker 1:
+Oh, for real.
+Speaker 2:
+For the, that was like the first game, like that was like, I think the only college game that I watched, um, and I'm glad I picked that one to watch.
+Speaker 1:
+I love college and, especially, you know, I like Michigan and. I like Georgia.
+Speaker 2:
+You're more of a Michigan fan.
+Speaker 1:
+Oh
+Speaker 2:
+man,
+Speaker 1:
+my buddies, his son, his grandson. He was, he came out of Michigan. He was, uh, he played for the Rams right now. Rams. He's a running back. Ah, it's pretty sweet. Download this. OK 225 Uh Put this in here. Electric bill. All right. What's that?
+Speaker 2:
+Uh,
+Speaker 1:
+oh,
+Speaker 2:
+um, do you have your driver's license handy?
+Speaker 1:
+Uh So last thing I
+Speaker 2:
+need.
+Speaker 1:
+Thank you so much.
+Speaker 2:
+That works. Thank you.
+Speaker 1:
+All right. Mhm.
+Speaker 2:
+His real name is Terry. For some reason, it's Jerry on City
+Speaker 1:
+Records. Yeah.
+Speaker 2:
+Got a new roof recently and has a leak that he's trying to have the roofer fix.
+Speaker 1:
+And I
+Speaker 2:
+think Didn't have full electric bill but got one page and. We're gonna try to collect the next one he gets in the mail. Text or call is the best way to reach him. He may not see any emails that Come through. All right, let's schedule
+Speaker 1:
+that.
+Speaker 2:
+Right now I'll just take a second. All right, then I'm gonna send you a text as
+Speaker 1:
+well.
+Speaker 2:
+That's probably the text from the inside.
+Speaker 1:
+Yep, said Jerry. Yeah.
+Speaker 2:
+My my text is gonna say Terry.
+Speaker 1:
+And apartments on 27th. Uh-huh.
+Speaker 2:
+And I told them to try to do a text or call reminder, so they'll probably do that in the morning on Monday, um, or maybe they'll try on Friday, um, to give you a reminder for Monday. Um, but if anything comes up, uh, for you, just shoot me a text or call and we'll get it rescheduled for you.
+Speaker 1:
+Mm. No. OK. Right,
+Speaker 2:
+just sent you a
+Speaker 1:
+text.
+Speaker 2:
+And I'll put my name there too. And then, um, I wanna ask is if you could please save my contacts um in your phone, that way, if I ever need to get in touch with you, um, you'll know it's me instead of a random number.
+Speaker 1:
+OK, which one was it? Oh was it yeah I think I just seen it a second ago. Yeah. Maybe
+Speaker 2:
+The back of the back button right
+Speaker 1:
+there. Oh yeah, OK, yeah,
+Speaker 2:
+I think
+Speaker 1:
+if you hit that.
+Speaker 2:
+And I'm not as familiar with Google Add to contacts.
+Speaker 1:
+Try hitting that because I had to do that later because I can I just write it down and do it my way because it's so it's go for it. It's a little complicated that
+Speaker 2:
+I say I'm not good. That's, that's another project for your kids to do for you
+Speaker 1:
+probably that's why I say I have to do that.
+Speaker 2:
+OK, I'll leave you with my card, um, too. How's that?
+Speaker 1:
+Yeah, that sounds better too. One way I'll get you awesome.
+Speaker 2:
+And uh throughout the process, so like. It'll be towards the summer probably that we get it done for you, so. There's a lot of people that we have a whole team of people working on your behalf to get this done for you. I'd love to be in every, every place, uh, like all the time, um, but you might hear from Nicole, um, at ROI. She does a lot of the scheduling and things like that and stuff from the, uh, that the installer helps with. I mentioned you'd probably hear from James. He more communicates over email. Um, so may not hear from him if you're not checking the email. Um, I have an assistant whose name is Mark, and he kind of helps me with other tasks too, and he's great for like answering questions, so I might have him like be reaching out to you for stuff as well. And then there's like probably like 5 or 6 other people that reach out sometimes, um, but we're gonna stay on top of this and we're gonna, if we get the approval from PEPCO, we're gonna get it done for you and my whole goal is to have you kind of forget that you did it and then uh we'll show up for the inspection next week and then uh hopefully you can just forget about it after that and then, you know, maybe in. Like April, May, something like that, we'll be calling you up to schedule the install day,
+Speaker 1:
+OK? OK, that sounds good to me. I'll grab my card.
+Speaker 2:
+And then just uh shoot me a text or give me a or probably call, uh. And then, let me write my new number on it, cause these are my old cards.
+Speaker 1:
+Cool. Seeing the time, I don't think you would have been, you would have been over here. You know, uh, used to be Doctor King's uh birthday. Oh yeah, that was the only thing that they would have had the parade, you couldn't come this way. You'd have been blocked you out and you probably would have said I I'm gonna get to his house because everything would have been going round. You could be right here. They said now you gotta go that way. Yeah, so that's what I was saying I was hoping. It wasn't no trouble today, but it's, I think they canceled, not cancel it, but not a big parade. See, they used to be big, I mean big plus they got the. Yeah,
+Speaker 2:
+I was driving downtown a little bit, uh, yesterday. It was, uh, I was trying to pick up something from a store and like I just, I just turned around and went to I was like going to the office after that. I just went back to the office because like yeah yeah like Humvees everywhere and um like huge fences and like National Guard everywhere. It's crazy. Right on. I'll hold on to this one. Yeah,
+Speaker 1:
+Matthew's
+Speaker 2:
+great to get in contact with too. Um, I'll probably let him know that uh you're doing it too, because he, I think he helped out the other family a couple doors down, and I think he's, uh, I know Rob talked to, let's see who else he knows, you know.
+Speaker 1:
+There is still I had to be Thursday and Friday. Cause he just so happened to knock on the door, I think, and it was getting late or whatever and. At least around 1 o'clock, 12 o'clock. That's why I say I don't know what day it was, but I thought it was Thursday.
+Speaker 2:
+Do you know Jon Favors?
+Speaker 1:
+John Favs.
+Speaker 2:
+Daisy or Ricardo.
+Speaker 1:
+Yeah,
+Speaker 2:
+these are all right in a little slide right here. Yeah, yeah, yeah. Matt's gonna go help them out on, on Friday. And I think he's gone over to Daisy's on Thursday. Oh yeah, we'll be here all week. Mhm. I have to have um Rob or Matt stop again just to say hi, cause I don't um I don't do as many of these as I, as I.
+Speaker 1:
+Used to. Well, you know, on the day because now I know you. OK I'm the only one to leave my door open I guess people gonna say

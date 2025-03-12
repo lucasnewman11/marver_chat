@@ -1,0 +1,184 @@
+﻿Speaker 1:
+New solar programs you guys as the homeowners don't have to pay anything for the cost of solar and enjoy all of that. So what happens is that those need to be renewable. Um, there's fines that are imposed on PEPCO, our electricity company here, but they're not 100% renewable by that year. And for them, it's cheaper to just pay for helping people go solar, paying those fines. That's why I think be paying for the whole system costs here. You get to enjoy all the benefits from it. So all the power that is produced comes right through uh the meter out there, runs backwards. So it's like counting how many credit shares have you guys start using power like when the lights here, it runs forwards through that meter there and that's how the metering program works like that. Mhm. All the power is yours to use, um, and what we'll do is, uh, once you get your bill, we'll plug it into the system here to find out how much of the bill is gonna get covered and anything above and beyond of what the system produces, you guys will just purchase from PEPCO at whatever electricity rate they're charging. Makes sense? Do we get paid off of it? If you guys ever produce? Yeah, you can. So we'll find out how much you guys are using for the whole year. You guys. And how do, how do you pay for the um installation and the material? Yeah, all the installation, maintenance and warranties is covered, is already covered. So you guys won't be charged for anything any time. How is that already covered because it'll be paid for it. So we sell our house. How does that work? Yeah, super simple. Uh, there's a half page. You let us know. It's the same view that you guys are already selling the house, and there's a half page document that we send over to you. You guys sign it and then your owners sign it, and they just take it over. Mhm. And the same, you know, uh, so what this is is a power purchase agreement. So what you guys are doing is agreeing to purchase the power from the solar system and you're agreeing to a $0.00 kilowatt right there. It won't be paying anything.
+Speaker 2:
+It's interesting, um, I think there's a page missing from your bill. That's really interesting. Is there something like there's like a gra let me I'll show you an example that's I've never seen that before. Um, Usually there is like a little. graph on it that shows you. Um, it's like this chart. Oh. Um. And It's not on the. Do you wanna go back into your PECO account? Mhm. I've never seen it not on there. And then just uh view build PDF that's probably what you just clicked. And Um, stress going down again. That's. Really interesting. we go off the bathroom,
+Speaker 1:
+yeah. Is
+Speaker 2:
+this That's fine. All right, to go out of that. Cere bill gets pretty high in the summer. And do you have electric heat as well? Yes. OK. Cool.
+Speaker 1:
+Yeah,
+Speaker 2:
+all right. You want a puppy?
+Speaker 1:
+Oh,
+Speaker 2:
+you said they're German shepherds. I know if I, I think my apartment's maxed out. If they get along with cats, maybe.
+Speaker 1:
+Oh that.
+Speaker 2:
+Uh
+Speaker 1:
+Yeah, walk a cat. Oh yeah. They smart. They smart one of the smarter dogs, OK.
+Speaker 2:
+Um, I'm just gonna optimize the design. I'm gonna see if we can actually add any more here. Here the radiance. No. Uh, if I can keep this above 950. That out first. Um, it's always better to, um, just like it's always easier to take panels off than to add them. And it's like James will send you an email if it gets downsized at all. I show you that one. OK. Maybe a little better some. Uh, it's kind of close, but it's work. That thing doesn't matter where it's at, but I could actually be right there.
+Speaker 1:
+It's the meters as well. What's that? Those are the meters that's it.
+Speaker 2:
+That's what I put it there. OK,
+Speaker 1:
+back, yeah, that's the back of the side, or just, oh,
+Speaker 2:
+it only needs to be on one side, so you put it where the shade is the worst, uh, OK. Oh, thank you so much. And re-simulate, that's actually still not bad. 960 still. I think that actually helped. Honestly try to keep it above. That'll probably send. I can do this. Yeah Try
+Speaker 1:
+They told us that we couldn't get it because we had a flat rule.
+Speaker 2:
+I was actually curious on that. When I looked at the picture, it looked like there was the slightest pitch to it. It's completely flat, OK. So yeah, a lot of companies don't do flat roofs and like especially with the production too, a lot of times we like we run it all the time where like someone tried to go solar years ago and the production didn't work, but it's like, hey, we got way better panels now than we did, um, like 35, 10 years ago, so um. And that's also like, I don't know if uh Yvette told you kind of what our organization does, but um it's like Tesla, they're, if you're talking to them, they're like, you know, a solar company and they sell cars and stuff too. But like the solar part of that, they're like a solar installation company and like. We do that too, but we're less of a solar company and more of like an advocacy organization. We're partnered with pretty much all the installers in DC, so it's like, hey, if this installer won't take this project, then we'll go and find one that will. And if there's none that'll take your project, then at least we, you know, at least we'll find out. But if it's possible, we'll get it done for you. But it looks pretty good, um, on my end. Yeah, so you're in a really unique situation. There's all these like the PEPCO grid, you get a PEPCO bill but you like a DC PEPCO, but like you live in Maryland, their feeder line is like. You know, the um line for the district is like kind of arbitrarily drawn. The power lines and how the grid is organized is like it spills over. So that's how people in Maryland can do this program.
+Speaker 1:
+But only if you live on the line. So like streets over they wouldn't be able to get it.
+Speaker 2:
+Yeah, like I don't know where it cuts off, but it's like a lot of times it is like that where uh it's like, hey, this street of the neighborhood can do it, but this street, nope. So you got pretty lucky. So, let's see. OK. If you had this on your house last year, go to your calculator. So it looks like this system would do like 6800 kilowatt hours. And I would do that. Um, I did it exactly. And then times 18. 0.1859 is the current electric rate. And equal All right. So, and you can. Tell them what it does.
+Speaker 1:
+So yeah, so your system here is going to produce this number up top here 6,786 kilowatts is the system we produce over the whole year. We multiply that by the current electricity rate, PEPCO by 18.5 cents. So this is about how much you'd be saving in electricity bills every single year. Mhm. And obviously increase more as uh Pepco's rates increase, so it'd be like, you know, it's $1200 this year, next year, probably like 1300 to $1400 and as the rates go up, we save more money.
+Speaker 2:
+Do you think that would help you out?
+Speaker 1:
+That's about $100 a month.
+Speaker 2:
+It's not, it's not it's not like winning the lottery. Um, if that would help you out, um, all we do is we just come out like sometime next week, we'll get the roof inspected, we'll check out your main panel, you know, and if everything's good to go, then we'll send it all into PEPCO for approval. We'll get the permits from the city and then probably sometime about towards the summer, uh, we'll be coming back and put them on your roof.
+Speaker 1:
+OK.
+Speaker 2:
+Does that sound good?
+Speaker 1:
+Yeah. And how long does it take? And what's the, um, I'm sorry, what's the um the roof inspection like what they're gonna come out and walk all over the roof. All right. OK.
+Speaker 2:
+And Martin can tell you a little bit about our installer
+Speaker 1:
+that we use. ROI, yeah. So ROI, um, installer, they started out as a roofing company about like 50 years ago and just a couple of years ago they started the whole solar thing. So the cool thing about them is like if you do need roofer for any reason, uh, they really wants to do it. So do you know when the last time you guys' roof was replaced we got the siding done. Oh, then you guys should be able to get a really good situation.
+Speaker 2:
+We, um, well we have, it's, uh, we have roofers doing the install and that's why we primarily use that.
+Speaker 1:
+Hey, can I call you right back, OK, because they take
+Speaker 2:
+I can even show you like, um, this was, uh, I can show you that's uh install, um, and I'm gonna text. Can you open that so I can send this link to you.
+Speaker 1:
+Yeah, they did the roof too, right? They did the roof right on the side, not the, not the top.
+Speaker 2:
+And that's why we check it out for you, um. And if there's anything that you need after the site survey, like if they recommend any roof work or if there's any upgrades you need, uh, we'll come back and we'll kind of have to redo everything, um, and hey, if we can help you out stuff, we'll help you and just like kind of go from there. I guess I'll just text this sent to you.
+Speaker 1:
+OK,
+Speaker 2:
+or Actually, I'm gonna have you um do this on my. Are you guys gonna be around here on Monday? Oh. Uh, I can, or you can skip this actually. Um, can you go back to the era? You said you'd be here on Monday, OK, uh, we could do like around one o'clock on Monday, uh, that's fine, OK.
+Speaker 1:
+Monday's date is.
+Speaker 2:
+And then Aurora, that's the 27th.
+Speaker 1:
+All right,
+Speaker 2:
+what's. And now go to the sales mode thing.
+Speaker 1:
+Oh wait a minute, you see. You said that one? Yeah. OK.
+Speaker 2:
+Do you think that'll work?
+Speaker 1:
+OK.
+Speaker 2:
+Someone does have to be here to, uh, let them in and check the main panel, um, but it usually takes like 30-40 minutes. Then that's good, continue. And then. Gonna do this OK, do a text box. And do it for the day.
+Speaker 1:
+Right
+Speaker 2:
+And then,
+Speaker 1:
+oh,
+Speaker 2:
+that's, I don't know I can do that. Do you uh today's date. And then go to production. Or do a text box for the fraction. And then
+Speaker 1:
+click.
+Speaker 2:
+That drop down Other one And Uh, OK, um, production pops up there. I think you have to unselect that maybe. Don't need the, it's already there and then. Do text box for the date. I would do like June 22nd. And then uh the next one. I think I think you can copy paste, um, just do the 23rd. I always do like 1 day after cause some so sometimes it takes like 3 days. It just depends. And not on if you forget the system oh my bad for touch screen, so you do the 7.14. Cool, and then go down. Then we're gonna fill out their info. 2 fingers, I think. OK, and then full name is gonna be R right cause you entered um when you created it up. Don't need to do, OK, that one works. Uh text box for address. And then you're gonna copy paste that address from the address also has to exactly match the records. And it will make you go through that again. What was it 541-75714 uh oops uh. And then while I have uh well Martin's filling out the paperwork, they also have us take a picture of your driver's license to send in to PEPCO. Do you have your driver's license, like a passport or something on you? OK And for those ones you can like put them in one text box, um, but I think you do you already have the email. Um, I get it from my, you know, OK. And you click on that. Then the blue And then I'll let you copy it right there. It's so dumb. There's like a button that will if you like hover over it. Try exiting out like a bunch. Um, there should, I think if you would hover over it. You tap it once. That's interesting. Yeah, iPad is a little different. But and then the number. And then Uh, then you can hit send cause the initials and that is done and then you can hit send. And then go to your email. And Sometimes it takes like to come out. Cool, and then I hit that. You got a review. And get started. I think that that's interesting. I think the oh I think on that one you need to make the text box bigger but don't, it's fine, it's fine. Um, just type it there if you can. Even if it doesn't show up, that should, that should still work, and if it doesn't, it's, it's good for now and I can show you how to redo it. OK. And then go next. And Um, it just has you initial for publicity that just lets us kind of take a picture of it and put it on our website or, um, put it in our CRM and like, uh, things like that, and then they have you sign it off on the bottom and then we'll take a picture of your driver's license and then we'll have it send you a confirmation for Monday and then that's about it and uh he can have you do it for the initials right there. It'll just let you draw it. And insert. And then next. And then click. And then this one will be signature. And then you'll, you'll get an email from James Sheets in the next couple days. He's like our client success manager. He like sends out a lot of the updates and it's just like, Hey, welcome to Stainable You. He'll send you a copy of everything. And then, uh, the confirmation email you'll get from uh ROI and they'll send you one before Monday as well. R ROI, yeah, yeah, that's the installer. So go to your messages. And Go there and the password is there. That's gonna be wrong. To copy the shoot, it's just ROI solar 24, no caps.
+Speaker 1:
+OK
+Speaker 2:
+And then enter Try again Let's try again.
+Speaker 1:
+Yeah, for 24 or 2025 for 24.
+Speaker 2:
+Uh. OK, and then go to the Monday at one o'clock.
+Speaker 1:
+I think.
+Speaker 2:
+Do you Paul Clifford for sales rep? Liverpool. And then, uh, so again, uh, no, no, no, no, no, uh, everything for the homeowner and that also has to that will have to match what you put on the other one. What about initial. No, no middle initial required on that one. Oh, and it'll, it'll have to be, uh, yours, Ray, or did you grab your both your IDs or oh, OK. Uh, we put it in your name. It could be on in either of your names because it's um both of you on the city records, OK, um. Well,
+Speaker 1:
+so you need my ID
+Speaker 2:
+or you just you just yours since it's in your name, yeah. Thanks for grabbing that though. Sometimes when I do these, I'll like screenshot it, um. The first time I do this, so I don't have to go back like 3 times. You're gonna very quickly see why Lucas and I are gonna automate all this stuff.
+Speaker 1:
+She should have been knew it. So how many puppies do you have back there? Uh-huh. MD or just
+Speaker 2:
+MD. And then I would take that off the um Also the Maryland on that. And then just hit yes. And then PPA. And then the email and phone number. And sometimes it'll be helpful, um, I guess for iPad you can pull up like your notes app and then just like write their stuff one time you go. Or do some, you know how to do this right. Yeah, OK, like I would do it in there and then anytime you need to plug it back into there you can just swipe over and copy paste from there. That And then sustainable you. And then direct your email. And download that one for bill while you
+Speaker 1:
+got it. Stop it closed.
+Speaker 2:
+Say share farm. Said Vows. And then, uh, put her in there so it doesn't get lost, but I see that bill. And then do the same thing for the um PPA.
+Speaker 1:
+I don't know what I'm doing
+Speaker 2:
+Email?
+Speaker 1:
+I can't remember that my boy you
+Speaker 2:
+back
+Speaker 1:
+on.
+Speaker 2:
+Dropbox sign. And then it's right there, same thing save files. And I call it I would just call like Ray PPA. Or however you wanna call for your records. I go back then. All right. Save that and then now you can go back to there. And then that's for my dad that's for the PPA who's file. Yeah. And then the bowl. 0, 3rd 1. And then that one. Additional take picture. Take a photo. Then you're gonna take a picture of the idea. And they can if they have a passport, passports work as well. OK. And it doesn't matter if the ID is expired, um, it just has to be, um, they're just really just making sure they're a real person back as well, just, um, yeah, they don't need the back, just the front, and if someone is really particular and doesn't wanna show their driver's license number, uh, you can even have it like white it out or something, um, and then go to back to the design. And then You're gonna take um hit exit at the top right. Or design mode. And then scroll over so it's like more centered. And Pull that up the production. And then you're gonna need to shift it over a little bit more so that's perfect, and then hit advanced. And then scroll up because they just need to see the radiance and you're gonna take the screenshot of this. And then go back to the site service scheduling. Um, And the library. Yup. And maybe just on the notes say. This is on the Maryland DC feeder. A figure.
+Speaker 1:
+Do you have a card?
+Speaker 2:
+Sure do. And then schedule a meeting.
+Speaker 1:
+Oh,
+Speaker 2:
+yes. And he, um, just schedule it. You should get a text and And email. With a confirmation from the installer. And I just got a new work number. I wanna put that on there. Is there a warranty with
+Speaker 1:
+The um Yeah,
+Speaker 2:
+so there's two things that could go wrong. The first thing is like an act of God, like a tree falling on it or a hurricane, something like that. That's all covered. The second thing is like, let's say a panel breaks or like your inverter goes out at like. Year 6, we fully monitor the system so we'd know if there's anything wrong and then we'd be out here pretty quick to fix it, fix it, um, like they'll get a notification, you'll get a notification, um, as long as you don't purposely break it yourself, like as long as you don't hop up on your roof and start smashing it with a hammer, uh, you'll be good to go. They pay for everything, so they take the full liability. And Uh, it's for 20 years, and then you can renew it for up to 30. So you'll get 30 years of all the coverages, and the production too at year 30, it'll be about 90% at year 30 as it is on year one. So they might be up there longer than I'm around. Uh, most people will be able be a lifetime guarantee. Um, and then I was gonna get, oh, I gotta make sure my number is correct.
+Speaker 1:
+So they come out on Monday at one. No, I ain't gonna be I go I have to go to and. Oh, on Monday. Oh you got. Well,
+Speaker 2:
+uh, the only inside portion we will need someone here so we can check the, uh, main panel. So I don't know how trained up the puppies are to open up the door and everything yet. I'm just kidding. Will you be here? Oh no. So we definitely need one of you here will one of you be here on Monday? OK, that'll work. And then Martin, what's your number?
+Speaker 1:
+744657904
+Speaker 2:
+to say that one more time,
+Speaker 1:
+sorry, 657. 90. 42
+Speaker 2:
+All right, uh, here's both our numbers. Um, it's our job to manage these projects like from today till, um, it goes up on the roof. There's like 156 steps between today and then, and our whole goal is kind of to just have you forget you did it because you don't want a ton of other projects to deal with right now, do you? I could. I can offload it all to you what, um, but no, we're gonna, we're gonna take care of it. We're gonna get it done for you. Um, if anything changes in the process, we'll let you know. Sometimes PEPCO will throw a wrench into these projects like actually on Yvette's project, they put it in like field verification and there was like all this back and forth with PEPCO where it's like, hey, you're sending power back to the grid here. We might need to upgrade some of the grid parts and then they come out like 3 weeks after that and then they send something in and then very boring, um, but it's like she signed up in I think like July, but it took till I think it was like November, December that she got insult, um, and that's kind of the same time expectation I set for you guys like getting it turned on by the summer. And hopefully sooner, maybe like 3 or 4 months would be great, um, but just in case anything happens, it's out of our control, um, and about 1 out of every 50 or 70 projects, PEPCO will actually disqualify and it's kind of arbitrary what they do, um, it. Mm I had a coup that happened a couple of times last year, um, but if that happens, we'll let you know, um, and if it's possible to get it done for you, we're gonna get it done, but I always, I always let people know that so they're not super mad at me, um, but I think that's pretty much it. Um, could you just make sure you got that, uh, OK, perfect.
+Speaker 1:
+And with the roof, like since it's flat, have you guys done, um, flat roofs before? Yeah, do you, you got some pulled up.
+Speaker 2:
+So flat roofs is probably the most common roof that we install on, and I'll show you that system because that's a flat roof. Then go to photos. I Oh yeah, you're like on the lead. And we typically use a mountain, um. A mounting bracket, it's uh adhesive, so there's no roof penetrations. There's zero holes in the roof. Um, we'll still give you like a leak warranty on roof coverages on it, um, but there's no ideally we don't want to put any holes in the roof at all, so. And yep, 2 on. And we actually did the same thing for. Yeah that's products, so these are kind of what those little brackets look like.
+Speaker 1:
+So they cover the roof.
+Speaker 2:
+On hers we got. Decent amount of coverage because like, hey, you're not paying for it, you know, get as much as you can because it's only gonna maximize what you're saving or what PEO is paying you if you're overproducing. Um, I'll tell you right now with your usage, it's not gonna cover your whole bill. Because there were, I saw a bunch of months on the graphs that were like, you know, $1800 or like $2000 so it's like it might only cover like a quarter of your bill or like like 30% of your bill. That's like what we shoot for, but the design what we showed you about like $1200 power worth of energy that's like better than nothing. So like one, the one of the ones I did yesterday, he's. Spending like $4000 a year in power, um, but we're getting him like $1500 off, so I was like, hey, like better than nothing. And that's where like a lot of our partnerships and um all these other sustainability services we're uh working on building out processes with. There's so many things that you can do for your home that are very low cost and have high impact on your energy, and we try to look for those things too. Um, so hopefully we'll be talking to you guys for a long time and helping you out, but so is the easiest thing, so we kind of check that one off first.
+Speaker 1:
+What are they doing with all this energy they showing?
+Speaker 2:
+On the grid. Well, I told you I didn't want to get one down one of these rabbit holes, but, uh, they need clean power on the grid because like it doesn't get stored like at the house. So you've probably heard of batteries or like Tesla probably tried to sell you some batteries, so they have a battery. Oh yeah,
+Speaker 1:
+and they go in the garage like a big box, a big, big old,
+Speaker 2:
+yeah. So, so it's like, yeah, you can pay like 2030 $40,000 for batteries to back up your system, but it's like why would you do that when you can just get it from the grid. So your battery is the grid. You'll send power even if it doesn't cover your whole bill. There'll probably be times where you're sending power to the grid like if, if you guys aren't here all day and the power is like, you know, all lights are off and everything, you'll probably be sending some back. And that's where Martin was saying when you send it back, your bill will start going like negative. So it's like if you send 100 kilowatt hours to the grid, then that's like 100 kilowatt hours off your bill. And then that's what they need, uh, PEPCO. They need more clean energy on the grid because the current infrastructure can't, like, it's a, it's a $1 trillion dollar project to get today's grid up to standards to meet today's demands, but demands are gonna grow by, like, it's gonna grow by 50% and by 2050. And it's like when those projects that I mentioned that run into fuel verification and they require grid upgrades, like it's like the one of them, it was like Pepco came back and like, hey, do you wanna pay 60 grand to upgrade the transformer here. And like usually we just like cancel those projects, but it's like those are costs that like PEPCO is gonna put on to their customers and it's like either they're gonna try to price gouge, um, you know, people, and most people just don't pay it, but someone's gonna have to pay for that at some point. And if PEPCO isn't gonna do it, then they're gonna put it on everyone's bills, and they have to make a profit. So like last year when they go to ask for $124 million or it was a $190 million rate increase for just 2024, well, they didn't get it approved, but they got $124 million approved. And that's why last well last year, the electric grade, it started out around like 15 cents, but now it's like 18.59 and that's just gonna continue to grow and grow and grow and grow. So like I don't think you can do the math on how much uh electric's gonna be, but when we produce clean energy with these systems, it helps fuck go out because they avoid an oppositely larger fine and it does help stabilize the grid because that power as soon as it's produced, it goes out to where it's needed. Like it'll go to your neighbors, it'll go to the church across the street or go to a school, um, and that's what makes, you know, that's why they passed the legislation to make this possible. Uh, so long story long, um, we got her on to our next one, but Martin's gonna, uh, send you a text, uh, with his name just so you have it. He's the best person to, OK, oh, or if you've already been texting her, um, yeah, do you have contact saved? OK, great. Um, good idea to save, uh, Martin's contact, maybe just like Martin Solar. So whenever you need help with something, you can just look up Solar on your phone. Uh, he's gonna be the best person to reach out for to for anything. Uh, we do have a whole team of people working, uh, to get these done for you. Um, you might hear I mentioned James, you might hear from Nicole, uh, for any scheduling things. You might hear from my assistant Mark. He's been helping with some of the admin stuff and. Uh, hopefully, we won't be bugging you too much, but, uh, just let us know if you need anything or have any questions, and we'll we'll get it taken care of for you, OK? Awesome. Anything else, uh, we can help you with?
+Speaker 1:
+No, that's it. If I have any questions, I'll give you guys a call.
+Speaker 2:
+All right, sounds good. And I would just look up for an update after the inspection is done. If there's any changes, we'll let you know. Um, if you don't hear from us, we're probably just gonna submit FO and you'll be good to go, yeah.
+Speaker 1:
+And then how soon will we get something after Monday?
+Speaker 2:
+Yeah, they do a technical review of all the like photos and measurements and everything, and they create the engineering design for it usually within a week. So I expect maybe in about a week or so, um, but if we haven't reached out to you, um, just like bug us or something. Then, but you have to get your OK on it if there's any big changes before we send it into Pepco when we send it into PEPCO, it's got to be like exactly right, yeah, I'm not sure how big your puppies are yet, but uh, so, uh, yeah
