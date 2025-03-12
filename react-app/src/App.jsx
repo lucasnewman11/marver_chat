@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ChatInterface from './components/ChatInterface';
-import { loadLocalTranscripts, searchTranscripts } from './services/localTranscripts';
+import { loadLocalTranscripts, searchTranscripts, checkTranscriptsLoaded } from './services/localTranscripts';
 import './App.css';
 
 function App() {
@@ -8,17 +8,32 @@ function App() {
   const [mode, setMode] = useState('assistant'); // 'assistant' or 'simulation'
   const [messages, setMessages] = useState([]);
   const [initialized, setInitialized] = useState(false);
+  const [loadingStatus, setLoadingStatus] = useState(''); // Track loading status
 
   // Automatically initialize on mount
   useEffect(() => {
     const initializeTranscripts = async () => {
       try {
-        console.log('Loading local transcripts...');
+        setLoadingStatus('Checking if transcripts are already processed...');
+        console.log('Checking if transcripts are already processed...');
         
-        // Load transcripts
+        // Check if we've already processed the transcripts
+        const alreadyLoaded = await checkTranscriptsLoaded();
+        
+        if (alreadyLoaded) {
+          setLoadingStatus('Transcripts already processed and loaded');
+          console.log('Transcripts already processed and loaded');
+          setInitialized(true);
+          return;
+        }
+        
+        setLoadingStatus('Processing local transcripts...');
+        console.log('Processing local transcripts...');
+        // Process transcripts from scratch
         const result = await loadLocalTranscripts();
         
         if (result.success) {
+          setLoadingStatus(result.message);
           console.log(result.message);
           setInitialized(true);
         }
@@ -105,6 +120,7 @@ function App() {
           onSendMessage={handleSendMessage}
           isInitialized={initialized}
           mode={mode}
+          loadingStatus={loadingStatus}
         />
       </main>
     </div>

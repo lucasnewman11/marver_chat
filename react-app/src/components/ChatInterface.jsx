@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ChatMessage from './ChatMessage';
 
-function ChatInterface({ messages, onSendMessage, isInitialized, mode }) {
+function ChatInterface({ messages, onSendMessage, isInitialized, mode, loadingStatus }) {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
   
@@ -23,7 +23,7 @@ function ChatInterface({ messages, onSendMessage, isInitialized, mode }) {
       <div className="chat-messages">
         {!isInitialized ? (
           <div className="initialization-message">
-            <p>Loading transcripts...</p>
+            <p>{loadingStatus || 'Loading transcripts...'}</p>
             <div className="loading-spinner"></div>
           </div>
         ) : messages.length === 0 ? (
