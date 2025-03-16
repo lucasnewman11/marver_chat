@@ -1,115 +1,96 @@
 # Sales Call Simulator - React Version
 
-This application provides a React-based interface for the Sales Call Simulator. It allows you to load and process documents from Google Drive, index them using Pinecone and VoyageAI embeddings, and chat with Claude based on the processed documents.
+This application provides a React-based interface for the Sales Call Simulator, using local transcripts for retrieval-augmented generation (RAG).
 
 ## Features
 
-- Document loading from Google Drive (simulation, technical, and general categories)
-- Document processing and indexing with different chunking strategies
-- Dual-mode chat interface:
-  - Assistant mode: Provides factual information about the documents
-  - Sales Simulation mode: Responds as if it were a salesperson on a call
-- Secure API key storage in local browser storage
-- Vector similarity search with filters based on document type
+- Chat interface with two modes: Assistant and Sales Simulation
+- Local transcript processing and indexing
+- Vector similarity search for relevant context retrieval
+- Support for both local and Pinecone vector databases
+- Automatic loading and processing of transcripts
 
-## Prerequisites
+## Getting Started
 
-- Node.js 14+ and npm
-- Google Service Account with Drive API access
-- API keys for:
-  - Anthropic Claude
-  - VoyageAI
-  - Pinecone
-
-## Setup
-
-1. Clone the repository
-2. Install dependencies:
-
+1. Install dependencies:
 ```
 npm install
 ```
 
-3. Create a `.env` file with the following variables (optional for development):
-
-```
-REACT_APP_API_URL=http://localhost:5000/api
-```
-
-4. Start the development server:
-
+2. Start the application:
 ```
 npm start
 ```
 
-5. In a separate terminal, start the API server:
-
-```
-npm run api
-```
-
 ## Configuration
 
-Before using the application, you'll need to configure it with your API keys and settings:
+All configuration is handled through environment variables in the `.env` file:
 
-1. **API Keys Tab**:
-   - Enter your Anthropic API key
-   - Enter your VoyageAI API key
-   - Enter your Pinecone API key
-   - Configure your Pinecone environment and index name
-
-2. **Documents Tab**:
-   - Paste your Google Service Account JSON
-   - Enter Google Drive folder IDs for your documents:
-     - Simulation folder: High-quality sales call transcripts
-     - Technical folder: Product specifications and technical documents
-     - General folder: Other call transcripts or general documentation
-
-## Usage
-
-1. Configure the application with your API keys and settings
-2. Load and index your documents using the "Load and Index Documents" button
-3. Switch between Assistant and Simulation modes as needed
-4. Start chatting by typing your message in the input field
-
-## Architecture
-
-- **Frontend**: React with functional components and hooks
-- **Backend**: Express server with RESTful API endpoints
-- **External Services**:
-  - Google Drive: Document storage
-  - VoyageAI: Document and query embeddings
-  - Pinecone: Vector database for similarity search
-  - Anthropic Claude: LLM for response generation
-
-## Development
-
-### File Structure
+### API Keys and Services
 
 ```
-/react-app
-  /public
-  /src
-    /components      # UI components
-    /services        # API service modules
-    /context         # React context providers
-    /hooks           # Custom React hooks
-    /utils           # Utility functions
-  /api
-    /controllers     # API endpoint handlers
-    /middleware      # Express middleware
-    /routes          # API route definitions
-    /services        # Business logic
-    /utils           # Utility functions
+# API Keys
+REACT_APP_ANTHROPIC_API_KEY=your-anthropic-api-key
+REACT_APP_VOYAGE_API_KEY=your-voyage-api-key
+
+# Pinecone settings
+REACT_APP_PINECONE_API_KEY=your-pinecone-api-key
+REACT_APP_PINECONE_ENVIRONMENT=your-pinecone-environment 
+REACT_APP_PINECONE_INDEX_NAME=sales-simulator
+
+# Vector database choice - "pinecone" or "local"
+REACT_APP_VECTOR_DB=local
 ```
 
-### Adding New Features
+## Vector Database Options
 
-1. Create the necessary backend endpoints in `/api/routes`
-2. Implement the frontend services in `/src/services`
-3. Create or update UI components in `/src/components`
-4. Connect everything in the main App component
+This application supports two vector database options:
+
+1. **Local Storage** (`REACT_APP_VECTOR_DB=local`):
+   - Uses browser IndexedDB through localforage
+   - All processing happens in-browser
+   - Data persists across browser sessions
+   - Simpler setup, no external dependencies
+
+2. **Pinecone** (`REACT_APP_VECTOR_DB=pinecone`):
+   - Uses Pinecone vector database service
+   - Requires a Pinecone API key
+   - Better performance for larger datasets
+   - Persistent storage outside the browser
+
+### Using Pinecone
+
+To use Pinecone:
+
+1. Create a Pinecone account at [https://www.pinecone.io/](https://www.pinecone.io/)
+2. Create an API key in the Pinecone dashboard
+3. Update your `.env` file with:
+   ```
+   REACT_APP_PINECONE_API_KEY=your-actual-key
+   REACT_APP_PINECONE_ENVIRONMENT=your-environment (e.g., us-west1-gcp)
+   REACT_APP_PINECONE_INDEX_NAME=sales-simulator
+   REACT_APP_VECTOR_DB=pinecone
+   ```
+
+The application will automatically:
+- Create an index if it doesn't exist
+- Process transcripts and store vectors
+- Query the index for relevant content
+
+## Local Transcripts
+
+Transcripts are stored in the `public/transcripts` directory and are loaded and processed automatically when the application starts. The processing workflow:
+
+1. Load transcript metadata
+2. Fetch and process each transcript file
+3. Split text into meaningful chunks
+4. Generate embeddings for each chunk
+5. Store in the selected vector database
+
+## Embedding Method
+
+The application uses a simple TF-IDF style embedding approach for matching queries to relevant content. This provides decent semantic search capabilities without requiring external embedding APIs.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.

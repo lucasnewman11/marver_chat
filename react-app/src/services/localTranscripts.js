@@ -1,11 +1,22 @@
 /**
  * Service to handle loading and retrieving from local transcripts
+ * Can use either local storage or Pinecone based on configuration
  */
 
 import localforage from 'localforage';
 import axios from 'axios';
 import { cosine } from 'similarity-score';
 import nlp from 'compromise';
+import { initPinecone, upsertVectors, queryVectors } from './pineconeService';
+
+// Determine which vector store to use
+const useVectorDB = process.env.REACT_APP_VECTOR_DB || 'local';
+console.log(`Using vector database: ${useVectorDB}`);
+
+// Flag to track if vectors have been indexed in Pinecone
+const pineconeStatusStore = localforage.createInstance({
+  name: 'pineconeStatus'
+});
 
 // Initialize localforage for storing processed transcripts
 const transcriptsStore = localforage.createInstance({
@@ -190,9 +201,31 @@ export const loadLocalTranscripts = async () => {
       }
     }
     
-    // Store all chunks and embeddings
-    await transcriptsStore.setItem('chunks', transcriptChunks);
-    console.log(`Stored ${transcriptChunks.length} chunks in local storage`);
+    if (useVectorDB === 'pinecone') {
+      try {
+        // Initialize Pinecone
+        console.log('Initializing Pinecone...');
+        await initPinecone();
+        
+        // Store vectors in Pinecone
+        console.log(`Storing ${transcriptChunks.length} chunks in Pinecone...`);
+        const result = await upsertVectors(transcriptChunks);
+        
+        if (result.success) {
+          // Mark as indexed in Pinecone
+          await pineconeStatusStore.setItem('indexed', true);
+          console.log(`Successfully stored ${result.count} vectors in Pinecone`);
+        }
+      } catch (pineconeError) {
+        console.error('Error storing in Pinecone, falling back to local storage:', pineconeError);
+        // Store in local storage as fallback
+        await transcriptsStore.setItem('chunks', transcriptChunks);
+      }
+    } else {
+      // Store in local storage
+      await transcriptsStore.setItem('chunks', transcriptChunks);
+      console.log(`Stored ${transcriptChunks.length} chunks in local storage`);
+    }
     
     return {
       success: true,
@@ -212,26 +245,25 @@ export const loadLocalTranscripts = async () => {
  */
 export const searchTranscripts = async (query, mode) => {
   try {
-    // Get all stored chunks
-    const chunks = await transcriptsStore.getItem('chunks');
-    
-    if (!chunks || chunks.length === 0) {
-      throw new Error('No transcript chunks found. Please ensure transcripts are loaded first.');
-    }
-    
     // Generate embedding for the query
     const queryEmbedding = generateSimpleEmbedding(query);
     
-    // Calculate similarity scores for all chunks
-    const scoredChunks = chunks.map(chunk => ({
-      ...chunk,
-      score: calculateSimilarity(queryEmbedding, chunk.embedding)
-    }));
+    let topResults = [];
     
-    // Sort by similarity score and take top results
-    const topResults = scoredChunks
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3);
+    if (useVectorDB === 'pinecone') {
+      try {
+        // Search in Pinecone
+        console.log('Searching in Pinecone...');
+        topResults = await queryVectors(queryEmbedding, 3);
+      } catch (pineconeError) {
+        console.error('Error searching in Pinecone, falling back to local search:', pineconeError);
+        // Fall back to local search
+        topResults = await searchLocal(query, queryEmbedding);
+      }
+    } else {
+      // Search in local storage
+      topResults = await searchLocal(query, queryEmbedding);
+    }
     
     // Extract context from top results
     let context = topResults.map(result => result.content).join('\n\n');
@@ -256,12 +288,45 @@ export const searchTranscripts = async (query, mode) => {
 };
 
 /**
+ * Search for relevant chunks in local storage
+ * @param {string} query - Original query text
+ * @param {Object} queryEmbedding - Query embedding
+ * @returns {Array} - Top matching chunks
+ */
+const searchLocal = async (query, queryEmbedding) => {
+  // Get all stored chunks
+  const chunks = await transcriptsStore.getItem('chunks');
+  
+  if (!chunks || chunks.length === 0) {
+    throw new Error('No transcript chunks found. Please ensure transcripts are loaded first.');
+  }
+  
+  // Calculate similarity scores for all chunks
+  const scoredChunks = chunks.map(chunk => ({
+    ...chunk,
+    score: calculateSimilarity(queryEmbedding, chunk.embedding)
+  }));
+  
+  // Sort by similarity score and take top results
+  return scoredChunks
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+};
+
+/**
  * Check if transcripts are already loaded and processed
  */
 export const checkTranscriptsLoaded = async () => {
   try {
-    const chunks = await transcriptsStore.getItem('chunks');
-    return Boolean(chunks && chunks.length > 0);
+    if (useVectorDB === 'pinecone') {
+      // Check if we've already indexed in Pinecone
+      const pineconeStatus = await pineconeStatusStore.getItem('indexed');
+      return Boolean(pineconeStatus);
+    } else {
+      // Check local storage
+      const chunks = await transcriptsStore.getItem('chunks');
+      return Boolean(chunks && chunks.length > 0);
+    }
   } catch (error) {
     console.error('Error checking transcripts:', error);
     return false;

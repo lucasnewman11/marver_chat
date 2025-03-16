@@ -16,7 +16,8 @@
     "web-vitals": "^2.1.4",
     "localforage": "^1.10.0",
     "similarity-score": "^1.0.0",
-    "compromise": "^14.10.0"
+    "compromise": "^14.10.0",
+    "uuid": "^9.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
