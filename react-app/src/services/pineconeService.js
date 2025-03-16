@@ -32,7 +32,8 @@ export const initPinecone = async () => {
     });
 
     // Get or create index
-    const indexList = await pineconeClient.listIndexes();
+    const indexesList = await pineconeClient.listIndexes();
+    const indexList = indexesList.indexes?.map(index => index.name) || [];
     
     if (!indexList.includes(indexName)) {
       console.log(`Creating Pinecone index: ${indexName}`);
@@ -41,10 +42,17 @@ export const initPinecone = async () => {
       await pineconeClient.createIndex({
         name: indexName,
         dimension: 1024, 
-        metric: 'cosine'
+        metric: 'cosine',
+        spec: {
+          serverless: {
+            cloud: 'gcp',
+            region: 'us-central1'
+          }
+        }
       });
       
       // Wait for index initialization (can take a minute)
+      console.log('Waiting for index to initialize...');
       await new Promise(resolve => setTimeout(resolve, 60000));
     }
 
@@ -141,7 +149,8 @@ export const queryVectors = async (queryEmbedding, topK = 3) => {
     const results = await index.query({
       vector: queryVector,
       topK,
-      includeMetadata: true
+      includeMetadata: true,
+      namespace: ''
     });
     
     // Format results
