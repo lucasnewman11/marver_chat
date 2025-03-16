@@ -14,13 +14,16 @@ let pineconeIndex = null;
  */
 export const initPinecone = async () => {
   try {
+    // Return cached clients if available
     if (pineconeClient && pineconeIndex) {
       return { client: pineconeClient, index: pineconeIndex };
     }
 
+    // Get API key and index name from environment variables
     const apiKey = process.env.REACT_APP_PINECONE_API_KEY;
     const indexName = process.env.REACT_APP_PINECONE_INDEX_NAME || 'sales-simulator';
 
+    // Validate required configuration
     if (!apiKey) {
       throw new Error('Pinecone API key is required');
     }
@@ -169,8 +172,41 @@ export const queryVectors = async (queryEmbedding, topK = 3) => {
   }
 };
 
+/**
+ * List all file IDs that are already indexed in Pinecone
+ * @returns {Promise<Array>} - Array of file IDs
+ */
+export const listIndexedFileIds = async () => {
+  try {
+    const { index } = await initPinecone();
+    
+    // Get all unique metadata.fileId values from the index
+    // We have to use a fetch endpoint since Pinecone doesn't have a direct way to list unique metadata values
+    const result = await index.fetch({ 
+      ids: [], 
+      top_k: 10000 // Set a large enough value to get all vectors
+    });
+    
+    // Extract unique file IDs from the metadata
+    const fileIds = new Set();
+    const vectors = Object.values(result.vectors || {});
+    
+    vectors.forEach(vector => {
+      if (vector.metadata && vector.metadata.fileId) {
+        fileIds.add(vector.metadata.fileId);
+      }
+    });
+    
+    return Array.from(fileIds);
+  } catch (error) {
+    console.error('Error listing indexed file IDs from Pinecone:', error);
+    return [];
+  }
+};
+
 export default {
   initPinecone,
   upsertVectors,
-  queryVectors
+  queryVectors,
+  listIndexedFileIds
 };

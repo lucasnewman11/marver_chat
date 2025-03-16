@@ -7,12 +7,12 @@ import localforage from 'localforage';
 import axios from 'axios';
 import { cosine } from 'similarity-score';
 import nlp from 'compromise';
-import { initPinecone, upsertVectors, queryVectors } from './pineconeService';
 import { 
-  getIndexedTranscripts, 
-  markTranscriptsAsIndexed, 
-  isTranscriptIndexed 
-} from './indexTracker';
+  initPinecone, 
+  upsertVectors, 
+  queryVectors, 
+  listIndexedFileIds 
+} from './pineconeService';
 
 // Determine which vector store to use
 const useVectorDB = process.env.REACT_APP_VECTOR_DB || 'local';
@@ -166,9 +166,9 @@ export const loadLocalTranscripts = async () => {
       console.log('Initializing Pinecone...');
       await initPinecone();
       
-      // Get list of already indexed transcripts
-      const alreadyIndexedIds = await getIndexedTranscripts();
-      console.log(`Found ${alreadyIndexedIds.length} already indexed transcripts`);
+      // Get list of already indexed transcripts directly from Pinecone
+      const alreadyIndexedIds = await listIndexedFileIds();
+      console.log(`Found ${alreadyIndexedIds.length} already indexed transcripts in Pinecone`);
       
       // Filter to only process new transcripts
       const newFileIds = fileIds.filter(id => !alreadyIndexedIds.includes(id));
@@ -230,8 +230,6 @@ export const loadLocalTranscripts = async () => {
           const result = await upsertVectors(newTranscriptChunks);
           
           if (result.success) {
-            // Mark files as indexed
-            await markTranscriptsAsIndexed(newFileIds);
             console.log(`Successfully stored ${result.count} vectors in Pinecone`);
           }
         } catch (pineconeError) {
