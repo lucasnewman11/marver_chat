@@ -8,15 +8,15 @@ import axios from 'axios';
 import { cosine } from 'similarity-score';
 import nlp from 'compromise';
 import { initPinecone, upsertVectors, queryVectors } from './pineconeService';
+import { 
+  getIndexedTranscripts, 
+  markTranscriptsAsIndexed, 
+  isTranscriptIndexed 
+} from './indexTracker';
 
 // Determine which vector store to use
 const useVectorDB = process.env.REACT_APP_VECTOR_DB || 'local';
 console.log(`Using vector database: ${useVectorDB}`);
-
-// Flag to track if vectors have been indexed in Pinecone
-const pineconeStatusStore = localforage.createInstance({
-  name: 'pineconeStatus'
-});
 
 // Initialize localforage for storing processed transcripts
 const transcriptsStore = localforage.createInstance({
@@ -147,7 +147,7 @@ const calculateSimilarity = (queryEmbedding, chunkEmbedding) => {
 };
 
 /**
- * Load and process all transcripts
+ * Load and process all transcripts, but only index new ones
  */
 export const loadLocalTranscripts = async () => {
   try {
@@ -157,80 +157,143 @@ export const loadLocalTranscripts = async () => {
     const metadataResponse = await axios.get('/transcripts/metadata.json');
     const metadata = metadataResponse.data;
     
-    // Process each transcript
+    // Get file IDs from metadata
     const fileIds = Object.keys(metadata);
     console.log(`Found ${fileIds.length} transcript files in metadata`);
     
-    const transcriptChunks = [];
-    
-    for (const fileId of fileIds) {
-      const filePath = metadata[fileId].path;
-      if (!filePath) continue;
-      
-      // Extract the filename from the path
-      const filename = filePath.split('/').pop();
-      
-      try {
-        // Fetch the transcript content
-        const response = await axios.get(`/transcripts/${filename}`);
-        const content = response.data;
-        
-        // Process the transcript content (chunking)
-        const chunks = chunkText(content);
-        
-        // For each chunk, create an embedding and store
-        chunks.forEach((chunk, index) => {
-          const embedding = generateSimpleEmbedding(chunk);
-          const chunkId = `${fileId}-chunk-${index}`;
-          
-          transcriptChunks.push({
-            id: chunkId,
-            fileId,
-            content: chunk,
-            embedding,
-            metadata: {
-              title: metadata[fileId].name || filename,
-              fileId
-            }
-          });
-        });
-        
-        console.log(`Processed ${chunks.length} chunks from ${filename}`);
-      } catch (error) {
-        console.error(`Error processing transcript ${filename}:`, error);
-      }
-    }
-    
     if (useVectorDB === 'pinecone') {
-      try {
-        // Initialize Pinecone
-        console.log('Initializing Pinecone...');
-        await initPinecone();
-        
-        // Store vectors in Pinecone
-        console.log(`Storing ${transcriptChunks.length} chunks in Pinecone...`);
-        const result = await upsertVectors(transcriptChunks);
-        
-        if (result.success) {
-          // Mark as indexed in Pinecone
-          await pineconeStatusStore.setItem('indexed', true);
-          console.log(`Successfully stored ${result.count} vectors in Pinecone`);
-        }
-      } catch (pineconeError) {
-        console.error('Error storing in Pinecone, falling back to local storage:', pineconeError);
-        // Store in local storage as fallback
-        await transcriptsStore.setItem('chunks', transcriptChunks);
+      // Initialize Pinecone
+      console.log('Initializing Pinecone...');
+      await initPinecone();
+      
+      // Get list of already indexed transcripts
+      const alreadyIndexedIds = await getIndexedTranscripts();
+      console.log(`Found ${alreadyIndexedIds.length} already indexed transcripts`);
+      
+      // Filter to only process new transcripts
+      const newFileIds = fileIds.filter(id => !alreadyIndexedIds.includes(id));
+      console.log(`Processing ${newFileIds.length} new transcripts...`);
+      
+      if (newFileIds.length === 0) {
+        console.log('All transcripts are already indexed in Pinecone, nothing to do');
+        return {
+          success: true,
+          message: 'All transcripts already indexed in Pinecone'
+        };
       }
+      
+      // Process only new transcripts
+      const newTranscriptChunks = [];
+      
+      for (const fileId of newFileIds) {
+        const filePath = metadata[fileId].path;
+        if (!filePath) continue;
+        
+        // Extract the filename from the path
+        const filename = filePath.split('/').pop();
+        
+        try {
+          // Fetch the transcript content
+          const response = await axios.get(`/transcripts/${filename}`);
+          const content = response.data;
+          
+          // Process the transcript content (chunking)
+          const chunks = chunkText(content);
+          
+          // For each chunk, create an embedding and store
+          chunks.forEach((chunk, index) => {
+            const embedding = generateSimpleEmbedding(chunk);
+            const chunkId = `${fileId}-chunk-${index}`;
+            
+            newTranscriptChunks.push({
+              id: chunkId,
+              fileId,
+              content: chunk,
+              embedding,
+              metadata: {
+                title: metadata[fileId].name || filename,
+                fileId
+              }
+            });
+          });
+          
+          console.log(`Processed ${chunks.length} chunks from ${filename}`);
+        } catch (error) {
+          console.error(`Error processing transcript ${filename}:`, error);
+        }
+      }
+      
+      if (newTranscriptChunks.length > 0) {
+        try {
+          // Store vectors in Pinecone
+          console.log(`Storing ${newTranscriptChunks.length} chunks in Pinecone...`);
+          const result = await upsertVectors(newTranscriptChunks);
+          
+          if (result.success) {
+            // Mark files as indexed
+            await markTranscriptsAsIndexed(newFileIds);
+            console.log(`Successfully stored ${result.count} vectors in Pinecone`);
+          }
+        } catch (pineconeError) {
+          console.error('Error storing in Pinecone:', pineconeError);
+        }
+      }
+      
+      return {
+        success: true,
+        message: `Successfully processed ${newFileIds.length} new transcripts into ${newTranscriptChunks.length} chunks`
+      };
     } else {
+      // For local storage, always process all transcripts
+      const transcriptChunks = [];
+      
+      for (const fileId of fileIds) {
+        const filePath = metadata[fileId].path;
+        if (!filePath) continue;
+        
+        // Extract the filename from the path
+        const filename = filePath.split('/').pop();
+        
+        try {
+          // Fetch the transcript content
+          const response = await axios.get(`/transcripts/${filename}`);
+          const content = response.data;
+          
+          // Process the transcript content (chunking)
+          const chunks = chunkText(content);
+          
+          // For each chunk, create an embedding and store
+          chunks.forEach((chunk, index) => {
+            const embedding = generateSimpleEmbedding(chunk);
+            const chunkId = `${fileId}-chunk-${index}`;
+            
+            transcriptChunks.push({
+              id: chunkId,
+              fileId,
+              content: chunk,
+              embedding,
+              metadata: {
+                title: metadata[fileId].name || filename,
+                fileId
+              }
+            });
+          });
+          
+          console.log(`Processed ${chunks.length} chunks from ${filename}`);
+        } catch (error) {
+          console.error(`Error processing transcript ${filename}:`, error);
+        }
+      }
+      
       // Store in local storage
       await transcriptsStore.setItem('chunks', transcriptChunks);
       console.log(`Stored ${transcriptChunks.length} chunks in local storage`);
+      
+      return {
+        success: true,
+        message: `Successfully processed ${fileIds.length} transcripts into ${transcriptChunks.length} chunks`
+      };
     }
-    
-    return {
-      success: true,
-      message: `Successfully processed ${fileIds.length} transcripts into ${transcriptChunks.length} chunks`
-    };
   } catch (error) {
     console.error('Error loading local transcripts:', error);
     throw error;
@@ -319,9 +382,12 @@ const searchLocal = async (query, queryEmbedding) => {
 export const checkTranscriptsLoaded = async () => {
   try {
     if (useVectorDB === 'pinecone') {
-      // Check if we've already indexed in Pinecone
-      const pineconeStatus = await pineconeStatusStore.getItem('indexed');
-      return Boolean(pineconeStatus);
+      // Check if we've already initialized Pinecone connection
+      await initPinecone();
+      
+      // For Pinecone, we consider it loaded if we can connect to the index
+      // The actual loading happens on demand
+      return true;
     } else {
       // Check local storage
       const chunks = await transcriptsStore.getItem('chunks');
