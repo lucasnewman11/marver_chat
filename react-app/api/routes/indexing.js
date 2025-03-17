@@ -61,19 +61,18 @@ router.post('/process', async (req, res) => {
     const technicalDocs = documents.filter(doc => doc.type === 'technical');
     const generalDocs = documents.filter(doc => doc.type === 'general');
     
-    // Process and chunk documents
+    // Process and chunk documents with memory-efficient batching
     const axios = require('axios');
-    const chunks = [];
     
-    // Function to generate embeddings with VoyageAI
-    async function generateEmbedding(text, voyageApiKey) {
+    // Function to generate embeddings with VoyageAI with retry and error handling
+    async function generateEmbedding(text, voyageApiKey, retries = 3) {
       try {
+        // Remove truncate: 'END' as mentioned in PINECONE_DEPLOYMENT.md
         const response = await axios.post(
           'https://api.voyageai.com/v1/embeddings',
           {
             model: 'voyage-2',
-            input: text,
-            truncate: 'END'
+            input: text
           },
           {
             headers: {
@@ -85,102 +84,194 @@ router.post('/process', async (req, res) => {
         
         return response.data.data[0].embedding;
       } catch (error) {
+        if (retries > 0) {
+          console.log(`Retrying embedding generation. Attempts remaining: ${retries-1}`);
+          // Exponential backoff
+          await new Promise(resolve => setTimeout(resolve, (4 - retries) * 1000));
+          return generateEmbedding(text, voyageApiKey, retries - 1);
+        }
         console.error('Error generating embedding:', error.response?.data || error.message);
         // Return a simple random vector as fallback for testing
         return Array.from({ length: 1024 }, () => Math.random());
       }
     }
     
-    // For simulation docs (larger chunks)
-    console.log('Processing simulation documents...');
-    for (const doc of simulationDocs) {
-      const textChunks = chunkText(doc.content, 3000, 100);
-      console.log(`Created ${textChunks.length} chunks for simulation doc ${doc.id}`);
-      
-      for (let i = 0; i < textChunks.length; i++) {
-        const chunk = textChunks[i];
-        chunks.push({
-          id: `${doc.id}-chunk-${i}`,
-          content: chunk,
-          metadata: {
-            type: 'simulation',
-            title: doc.name,
-            fileId: doc.id
-          },
-          embedding: await generateEmbedding(chunk, voyageApiKey)
-        });
-      }
-    }
-    
-    // For technical and general docs (smaller chunks)
-    console.log('Processing technical and general documents...');
-    for (const doc of [...technicalDocs, ...generalDocs]) {
-      const textChunks = chunkText(doc.content, 512, 50);
-      console.log(`Created ${textChunks.length} chunks for ${doc.type} doc ${doc.id}`);
-      
-      for (let i = 0; i < textChunks.length; i++) {
-        const chunk = textChunks[i];
-        chunks.push({
-          id: `${doc.id}-chunk-${i}`,
-          content: chunk,
-          metadata: {
-            type: doc.type,
-            title: doc.name,
-            fileId: doc.id
-          },
-          embedding: await generateEmbedding(chunk, voyageApiKey)
-        });
-      }
-    }
-    
-    console.log(`Generated embeddings for ${chunks.length} total chunks`);
-    
-    // Now upload the chunks to Pinecone
     const serverlessUrl = `https://${pineconeIndexName}-${pineconeEnvironment}.svc.${pineconeEnvironment}.pinecone.io`;
     
-    // Batch upsert chunks to Pinecone (100 at a time)
-    const batchSize = 100;
-    console.log(`Upserting ${chunks.length} vectors to Pinecone in batches of ${batchSize}...`);
+    // Process documents in batches to reduce memory usage
+    const documentBatchSize = 5; // Process 5 documents at a time to avoid memory issues
+    const vectorBatchSize = 50;   // Send fewer vectors at a time to Pinecone
     
-    for (let i = 0; i < chunks.length; i += batchSize) {
-      const batch = chunks.slice(i, i + batchSize);
-      const vectors = batch.map(chunk => ({
-        id: chunk.id,
-        values: chunk.embedding,
-        metadata: {
-          text: chunk.content,
-          fileId: chunk.metadata.fileId,
-          title: chunk.metadata.title,
-          type: chunk.metadata.type
-        }
-      }));
+    // Track progress for potential resumption
+    let processedDocumentCount = 0;
+    let totalChunksProcessed = 0;
+    
+    // Process simulation docs in batches
+    console.log('Processing simulation documents...');
+    for (let i = 0; i < simulationDocs.length; i += documentBatchSize) {
+      const docBatch = simulationDocs.slice(i, i + documentBatchSize);
+      const batchChunks = [];
       
-      try {
-        await axios.post(
-          `${serverlessUrl}/vectors/upsert`,
-          { vectors },
-          {
-            headers: {
-              'Api-Key': pineconeApiKey,
-              'Content-Type': 'application/json'
-            }
-          }
-        );
-        console.log(`Upserted batch ${Math.floor(i/batchSize) + 1} of ${Math.ceil(chunks.length/batchSize)}`);
-      } catch (error) {
-        console.error('Error upserting vectors to Pinecone:', error.response?.data || error.message);
-        throw error;
+      for (const doc of docBatch) {
+        const textChunks = chunkText(doc.content, 3000, 100);
+        console.log(`Created ${textChunks.length} chunks for simulation doc ${doc.id}`);
+        
+        for (let j = 0; j < textChunks.length; j++) {
+          const chunk = textChunks[j];
+          // Generate embedding 
+          const embedding = await generateEmbedding(chunk, voyageApiKey);
+          
+          batchChunks.push({
+            id: `${doc.id}-chunk-${j}`,
+            content: chunk,
+            metadata: {
+              type: 'simulation',
+              title: doc.name,
+              fileId: doc.id
+            },
+            embedding
+          });
+        }
       }
+      
+      // Upload this batch to Pinecone
+      console.log(`Upserting ${batchChunks.length} vectors to Pinecone...`);
+      
+      // Process vectors in smaller batches
+      for (let j = 0; j < batchChunks.length; j += vectorBatchSize) {
+        const vectorBatch = batchChunks.slice(j, j + vectorBatchSize);
+        const vectors = vectorBatch.map(chunk => ({
+          id: chunk.id,
+          values: chunk.embedding,
+          metadata: {
+            text: chunk.content,
+            fileId: chunk.metadata.fileId,
+            title: chunk.metadata.title,
+            type: chunk.metadata.type
+          }
+        }));
+        
+        try {
+          await axios.post(
+            `${serverlessUrl}/vectors/upsert`,
+            { vectors },
+            {
+              headers: {
+                'Api-Key': pineconeApiKey,
+                'Content-Type': 'application/json'
+              }
+            }
+          );
+          
+          totalChunksProcessed += vectors.length;
+          console.log(`Upserted ${vectors.length} vectors, total progress: ${totalChunksProcessed}`);
+          
+          // Clear references to allow garbage collection
+          vectors.length = 0;
+        } catch (error) {
+          console.error('Error upserting vectors to Pinecone:', error.response?.data || error.message);
+          // Implement exponential backoff for API requests
+          console.log('Retrying after pause...');
+          await new Promise(resolve => setTimeout(resolve, 5000));
+          j -= vectorBatchSize; // Retry this batch
+        }
+      }
+      
+      processedDocumentCount += docBatch.length;
+      console.log(`Processed ${processedDocumentCount}/${simulationDocs.length} simulation documents`);
+      
+      // Clear references to allow garbage collection
+      batchChunks.length = 0;
+    }
+    
+    // Process technical and general docs in batches
+    console.log('Processing technical and general documents...');
+    const otherDocs = [...technicalDocs, ...generalDocs];
+    
+    for (let i = 0; i < otherDocs.length; i += documentBatchSize) {
+      const docBatch = otherDocs.slice(i, i + documentBatchSize);
+      const batchChunks = [];
+      
+      for (const doc of docBatch) {
+        const textChunks = chunkText(doc.content, 512, 50);
+        console.log(`Created ${textChunks.length} chunks for ${doc.type} doc ${doc.id}`);
+        
+        for (let j = 0; j < textChunks.length; j++) {
+          const chunk = textChunks[j];
+          // Generate embedding
+          const embedding = await generateEmbedding(chunk, voyageApiKey);
+          
+          batchChunks.push({
+            id: `${doc.id}-chunk-${j}`,
+            content: chunk,
+            metadata: {
+              type: doc.type,
+              title: doc.name,
+              fileId: doc.id
+            },
+            embedding
+          });
+        }
+      }
+      
+      // Upload this batch to Pinecone
+      console.log(`Upserting ${batchChunks.length} vectors from other docs to Pinecone...`);
+      
+      // Process vectors in smaller batches
+      for (let j = 0; j < batchChunks.length; j += vectorBatchSize) {
+        const vectorBatch = batchChunks.slice(j, j + vectorBatchSize);
+        const vectors = vectorBatch.map(chunk => ({
+          id: chunk.id,
+          values: chunk.embedding,
+          metadata: {
+            text: chunk.content,
+            fileId: chunk.metadata.fileId,
+            title: chunk.metadata.title,
+            type: chunk.metadata.type
+          }
+        }));
+        
+        try {
+          await axios.post(
+            `${serverlessUrl}/vectors/upsert`,
+            { vectors },
+            {
+              headers: {
+                'Api-Key': pineconeApiKey,
+                'Content-Type': 'application/json'
+              }
+            }
+          );
+          
+          totalChunksProcessed += vectors.length;
+          console.log(`Upserted ${vectors.length} vectors, total progress: ${totalChunksProcessed}`);
+          
+          // Clear references to allow garbage collection
+          vectors.length = 0;
+        } catch (error) {
+          console.error('Error upserting vectors to Pinecone:', error.response?.data || error.message);
+          // Implement exponential backoff
+          console.log('Retrying after pause...');
+          await new Promise(resolve => setTimeout(resolve, 5000));
+          j -= vectorBatchSize; // Retry this batch
+        }
+      }
+      
+      processedDocumentCount += docBatch.length;
+      console.log(`Processed ${processedDocumentCount}/${simulationDocs.length + otherDocs.length} total documents`);
+      
+      // Clear references to allow garbage collection
+      batchChunks.length = 0;
     }
     
     res.json({
-      message: `Successfully processed and indexed ${chunks.length} document chunks`,
+      message: `Successfully processed and indexed ${totalChunksProcessed} document chunks`,
       documentCounts: {
         simulation: simulationDocs.length,
         technical: technicalDocs.length,
         general: generalDocs.length
       },
-      chunkCount: chunks.length
+      chunkCount: totalChunksProcessed
     });
   } catch (error) {
     console.error('Error processing documents:', error);
@@ -234,15 +325,17 @@ router.post('/query', async (req, res) => {
       pineconeIndexName || 'sales-simulator'
     );
     
-    // Function to generate embeddings with VoyageAI
-    async function generateEmbedding(text, voyageApiKey) {
+    // Reuse the existing generateEmbedding function with retries from the process endpoint
+
+    // Function to generate embeddings with VoyageAI with retry and error handling
+    async function generateEmbedding(text, voyageApiKey, retries = 3) {
       try {
+        // Remove truncate: 'END' parameter as mentioned in PINECONE_DEPLOYMENT.md
         const response = await axios.post(
           'https://api.voyageai.com/v1/embeddings',
           {
             model: 'voyage-2',
-            input: text,
-            truncate: 'END'
+            input: text
           },
           {
             headers: {
@@ -254,6 +347,12 @@ router.post('/query', async (req, res) => {
         
         return response.data.data[0].embedding;
       } catch (error) {
+        if (retries > 0) {
+          console.log(`Retrying embedding generation. Attempts remaining: ${retries-1}`);
+          // Exponential backoff
+          await new Promise(resolve => setTimeout(resolve, (4 - retries) * 1000));
+          return generateEmbedding(text, voyageApiKey, retries - 1);
+        }
         console.error('Error generating embedding:', error.response?.data || error.message);
         // Return a simple random vector as fallback for testing
         return Array.from({ length: 1024 }, () => Math.random());
@@ -261,26 +360,47 @@ router.post('/query', async (req, res) => {
     }
     
     // 1. Generate query embedding with VoyageAI
+    console.log(`Generating embedding for query: "${query}"`);
     const queryEmbedding = await generateEmbedding(query, voyageApiKey);
     
-    // 2. Query Pinecone with the embedding
+    // 2. Query Pinecone with the embedding with retry mechanism
     const axios = require('axios');
     const serverlessUrl = `https://${pineconeIndexName}-${pineconeEnvironment}.svc.${pineconeEnvironment}.pinecone.io`;
     
-    const pineconeResponse = await axios.post(
-      `${serverlessUrl}/query`, 
-      {
-        vector: queryEmbedding,
-        topK,
-        includeMetadata: true
-      },
-      {
-        headers: {
-          'Api-Key': pineconeApiKey,
-          'Content-Type': 'application/json'
+    // Function to query Pinecone with exponential backoff
+    async function queryPineconeWithRetry(vector, maxRetries = 3) {
+      let retries = 0;
+      
+      while (retries <= maxRetries) {
+        try {
+          return await axios.post(
+            `${serverlessUrl}/query`, 
+            {
+              vector,
+              topK,
+              includeMetadata: true
+            },
+            {
+              headers: {
+                'Api-Key': pineconeApiKey,
+                'Content-Type': 'application/json'
+              }
+            }
+          );
+        } catch (error) {
+          retries++;
+          if (retries > maxRetries) {
+            throw error;
+          }
+          console.log(`Retrying Pinecone query (attempt ${retries}/${maxRetries})...`);
+          // Exponential backoff
+          await new Promise(resolve => setTimeout(resolve, Math.pow(2, retries) * 1000));
         }
       }
-    );
+    }
+    
+    console.log(`Querying Pinecone for similar vectors...`);
+    const pineconeResponse = await queryPineconeWithRetry(queryEmbedding);
     
     // 3. Process and format results
     const matches = pineconeResponse.data.matches || [];

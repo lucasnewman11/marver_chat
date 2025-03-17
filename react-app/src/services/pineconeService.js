@@ -95,15 +95,26 @@ export const initPinecone = async () => {
   }
 };
 
+// Reuse vector array to reduce memory allocation
+let reusableVector = null;
+
 /**
  * Convert sparse embeddings to dense vectors
+ * Memory-optimized version that reuses arrays when possible
  * @param {Object} sparseEmbedding - Sparse embedding (term -> weight)
  * @param {number} dimension - Desired vector dimension
  * @returns {Array} - Dense vector
  */
 const convertToDenseVector = (sparseEmbedding, dimension = 1024) => {
-  // Simple conversion: hash terms to positions and use weights as values
-  const vector = new Array(dimension).fill(0);
+  // Initialize or reuse vector array
+  if (!reusableVector || reusableVector.length !== dimension) {
+    reusableVector = new Array(dimension).fill(0);
+  } else {
+    // Reset existing array to zeros
+    for (let i = 0; i < dimension; i++) {
+      reusableVector[i] = 0;
+    }
+  }
   
   // Compute hash-based indices for each term
   Object.entries(sparseEmbedding).forEach(([term, weight]) => {
@@ -112,10 +123,11 @@ const convertToDenseVector = (sparseEmbedding, dimension = 1024) => {
       (hash, char) => ((hash << 5) - hash) + char.charCodeAt(0), 0
     );
     const index = Math.abs(hashCode) % dimension;
-    vector[index] = weight;
+    reusableVector[index] = weight;
   });
   
-  return vector;
+  // Clone the array to return a new copy (avoid shared state issues)
+  return [...reusableVector];
 };
 
 /**

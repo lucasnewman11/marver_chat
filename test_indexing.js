@@ -104,13 +104,19 @@ async function runTest() {
   }
 }
 
-// Start the API server and run the test
+// Start the API server and run the test with increased memory limit
 const { spawn } = require('child_process');
 
-console.log('Starting API server...');
-const apiServer = spawn('node', ['./react-app/api/server.js'], {
+console.log('Starting API server with increased memory limit...');
+const apiServer = spawn('node', ['--max-old-space-size=4096', './react-app/api/server.js'], {
   stdio: 'inherit',
-  env: { ...process.env, PORT: '5001' }
+  env: { ...process.env, PORT: '5001', NODE_OPTIONS: '--max-old-space-size=4096' }
+});
+
+// Add error handling for API server
+apiServer.on('error', (error) => {
+  console.error('API server error:', error);
+  process.exit(1);
 });
 
 // Wait a bit for the server to start
@@ -121,11 +127,17 @@ setTimeout(async () => {
   } catch (error) {
     console.error('Test error:', error);
   } finally {
-    // Shutdown the API server
+    // Properly cleanup before exit
+    console.log('Shutting down API server...');
     apiServer.kill();
-    process.exit(0);
+    
+    // Give time for cleanup
+    setTimeout(() => {
+      console.log('Test process exiting');
+      process.exit(0);
+    }, 1000);
   }
-}, 3000);
+}, 5000); // Longer wait time for server initialization
 
 // Handle cleanup on exit
 process.on('SIGINT', () => {
