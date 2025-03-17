@@ -16,6 +16,11 @@ app.get('/api', (req, res) => {
   res.json({ message: 'API server running' });
 });
 
+// Routes
+app.use('/api/chat', require('./routes/chat'));
+app.use('/api/indexing', require('./routes/indexing'));
+app.use('/api/google-drive', require('./routes/googleDrive'));
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
